@@ -68,7 +68,7 @@ public class BlockHandScanner extends BlockContainer{
                 world.setBlockMetadataWithNotify(x, y, z, whichDirectionFacing, 2);
                 
                 HandScannerTile tileEntity = (HandScannerTile) world.func_147438_o(x, y, z);
-                
+                System.out.println(tileEntity);
                 tileEntity.oName = name;
                 
                 EntityPlayer player = (EntityPlayer) entity;
