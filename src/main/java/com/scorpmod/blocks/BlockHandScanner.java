@@ -29,7 +29,7 @@ public class BlockHandScanner extends BlockContainer{
 
         public BlockHandScanner(){
                 super(Material.field_151576_e);
-                func_149663_c("handscanner");
+                func_149663_c("handScanner");
                 func_149647_a(CreativeTabs.tabBlock);
                 func_149711_c(3);
         }
@@ -70,13 +70,14 @@ public class BlockHandScanner extends BlockContainer{
                 HandScannerTile tileEntity = (HandScannerTile) world.func_147438_o(x, y, z);
                 
                 EntityPlayer player = (EntityPlayer) entity;
-                
+               
                 if(!world.isRemote)player.func_146105_b(new ChatComponentText("Hand print set"));
                 
                 if (entity instanceof EntityPlayer) {
                         name = player.getCommandSenderName();
                 }
                 tileEntity.oName = name;
+                System.out.println(tileEntity.oName);
         }
 
         @Override
@@ -102,6 +103,8 @@ public class BlockHandScanner extends BlockContainer{
                                         power = 0;
                                         status = 0;
                                         par1World.func_147459_d(x, y, z, ScorpMod.blockhandScanner);
+                                }else{
+                                	System.out.println("Error");
                                 }
                                 return true;
                         }else if(!nbtname.equals(name)){
@@ -134,5 +137,4 @@ public class BlockHandScanner extends BlockContainer{
                 return power;
         }
 }
-
 
