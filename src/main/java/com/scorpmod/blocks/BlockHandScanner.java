@@ -69,17 +69,14 @@ public class BlockHandScanner extends BlockContainer{
                 
                 HandScannerTile tileEntity = (HandScannerTile) world.func_147438_o(x, y, z);
                 
-                tileEntity.oName = name;
-                
                 EntityPlayer player = (EntityPlayer) entity;
                 
                 if(!world.isRemote)player.func_146105_b(new ChatComponentText("Hand print set"));
                 
-                
-                
                 if (entity instanceof EntityPlayer) {
                         name = player.getCommandSenderName();
                 }
+                tileEntity.oName = name;
         }
 
         @Override
