@@ -40,8 +40,8 @@ public class BlockHandScanner extends BlockContainer{
     	@Override
     	@SideOnly(Side.CLIENT)
     	public void func_149651_a(IIconRegister reg){
-                this.side = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "front");
-                this.bottom = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "bottom");
+                this.side = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "sides");
+                this.bottom = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "top");
                 this.top = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "top");
                 this.front = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "front");
         }
