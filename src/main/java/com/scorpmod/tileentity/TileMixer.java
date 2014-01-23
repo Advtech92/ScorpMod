@@ -251,7 +251,7 @@ public class TileMixer extends TileEntity implements IInventory
                 {
                         abc++;
                 }
-                this.worldObj.func_147586_a(field_145851_c, field_145848_d, field_145849_e);
+                this.field_145850_b.func_147586_a(field_145851_c, field_145848_d, field_145849_e);
         }
 
         public int getCookProgressScaled(int par1)
