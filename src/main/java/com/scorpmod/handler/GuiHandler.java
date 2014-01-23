@@ -1,6 +1,8 @@
 package com.scorpmod.handler;
 
 
+import com.scorpmod.tileentity.TileMixer;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;

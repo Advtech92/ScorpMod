@@ -1,5 +1,7 @@
 package com.scorpmod.tileentity;
 
+import com.scorpmod.Recipes.MixerRecipies;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
@@ -251,7 +253,7 @@ public class TileMixer extends TileEntity implements IInventory
                 {
                         abc++;
                 }
-                this.field_145850_b.func_147586_a(field_145851_c, field_145848_d, field_145849_e);
+                this.field_145850_b.func_147471_g(field_145851_c, field_145848_d, field_145849_e);
         }
 
         public int getCookProgressScaled(int par1)
