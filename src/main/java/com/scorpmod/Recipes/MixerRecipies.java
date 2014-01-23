@@ -10,8 +10,8 @@ import net.minecraft.item.ItemStack;
 
 public class MixerRecipies
 {
-        private Map<ArrayList<Integer>, ItemStack> mixerList = new HashMap<ArrayList<Integer>, ItemStack>();
-        private Map<Integer, Float> mixerExperience = new HashMap<Integer, Float>();
+        private Map<ArrayList<Item>, ItemStack> mixerList = new HashMap<ArrayList<Item>, ItemStack>();
+        private Map<Item, Float> mixerExperience = new HashMap<Item, Float>();
         private static final MixerRecipies mixerBase = new MixerRecipies();
 
         public static final MixerRecipies instance()
@@ -19,27 +19,27 @@ public class MixerRecipies
                 return mixerBase;
         }
 
-        public ItemStack getRecipeResult(int id1, int id2)
+        public ItemStack getRecipeResult(Item item, Item item2)
         {
-                ArrayList<Integer> array1 = new ArrayList<Integer>(), array2 = new ArrayList<Integer>();
+                ArrayList<Item> array1 = new ArrayList<Item>(), array2 = new ArrayList<Item>();
                 
-                array1.add(id1);
-                array1.add(id2);
+                array1.add(item);
+                array1.add(item2);
                 
-                array2.add(id2);
-                array2.add(id1);
+                array2.add(item2);
+                array2.add(item);
                 
                 return mixerList.get(array1) == null ? mixerList.get(array2) : mixerList.get(array1);
         }
 
-        public void addMixerRecipe(int id1, int id2, ItemStack itemStack, float experience)
+        public void addMixerRecipe(Item item1, Item item2, ItemStack itemStack, float experience)
         {
-                ArrayList<Integer> array = new ArrayList<Integer>();
-                array.add(id1);
-                array.add(id2);
+                ArrayList<Item> array = new ArrayList<Item>();
+                array.add(item1);
+                array.add(item2);
                 
                 mixerList.put(array, itemStack);
-                this.mixerExperience.put(Integer.valueOf(itemStack.itemID), Float.valueOf(experience));
+                this.mixerExperience.put(itemStack.getItem(), Float.valueOf(experience));
         }
 
         public float getExperience(int par1)

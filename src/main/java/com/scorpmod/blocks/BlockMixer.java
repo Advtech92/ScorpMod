@@ -22,7 +22,7 @@ public class BlockMixer extends BlockContainer{
 
         public BlockMixer(){
             super(Material.field_151576_e);
-            func_149663_c("handScanner");
+            func_149663_c("mixer");
             func_149647_a(CreativeTabs.tabBlock);
             func_149711_c(3);
         }

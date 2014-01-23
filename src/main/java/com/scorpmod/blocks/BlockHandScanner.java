@@ -61,7 +61,7 @@ public class BlockHandScanner extends BlockContainer{
         @Override
         public void func_149689_a(World world, int x, int y, int z, EntityLivingBase entity, ItemStack par6ItemStack) {
                 
-        		world.func_147459_d(x, y, z, ScorpMod.blockhandScanner);
+        		world.func_147459_d(x, y, z, ModBlocks.blockhandScanner);
         		
                 int whichDirectionFacing = MathHelper.floor_double(entity.rotationYaw * 4.0F / 360.0F + 2.5D) & 3;
                 
@@ -84,7 +84,7 @@ public class BlockHandScanner extends BlockContainer{
                 public boolean func_149727_a(World par1World, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
         {
                 HandScannerTile tileEntity = (HandScannerTile) par1World.func_147438_o(x, y, z);
-                par1World.func_147459_d(x, y, z, ScorpMod.blockhandScanner);
+                par1World.func_147459_d(x, y, z, ModBlocks.blockhandScanner);
                 nbtname = tileEntity.oName;
                 name = player.getCommandSenderName();
                 System.out.println("Right Click");
@@ -98,11 +98,11 @@ public class BlockHandScanner extends BlockContainer{
                                 if(status == 0){
                                         power = 15;
                                         status = 1;
-                                        par1World.func_147459_d(x, y, z, ScorpMod.blockhandScanner);
+                                        par1World.func_147459_d(x, y, z, ModBlocks.blockhandScanner);
                                 }else if(status == 1){
                                         power = 0;
                                         status = 0;
-                                        par1World.func_147459_d(x, y, z, ScorpMod.blockhandScanner);
+                                        par1World.func_147459_d(x, y, z, ModBlocks.blockhandScanner);
                                 }else{
                                 	System.out.println("Error");
                                 }
