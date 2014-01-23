@@ -37,8 +37,8 @@ public class GuiMixer extends GuiContainer
         @Override
         protected void func_146979_b(int par1, int par2)
         {
-        	field_71466_p.drawString(StatCollector.translateToLocal("container.inventory"), 8, (field_147000_g - 96) + 2, 4210752);
-                this.fontRenderer.drawString("Liquid Mixer", 66, 6, 4210752);
+        	this.field_146289_q.drawString(StatCollector.translateToLocal("container.inventory"), 8, (field_147000_g - 96) + 2, 4210752);
+                this.field_146289_q.drawString("Liquid Mixer", 66, 6, 4210752);
         }
 
         /**
@@ -53,7 +53,7 @@ public class GuiMixer extends GuiContainer
                 int k = (this.field_146294_l - this.field_146999_f) / 2;
                 int l = (this.field_146295_m - this.field_147000_g) / 2;
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-                this.mc.renderEngine.bindTexture(DefaultProps.MIXER_GUI);
+                this.field_146297_k.renderEngine.bindTexture(DefaultProps.MIXER_GUI);
                 var5 = (this.field_146294_l - this.field_146999_f) / 2;
                 var6 = (this.field_146295_m - this.field_147000_g) / 2;
 

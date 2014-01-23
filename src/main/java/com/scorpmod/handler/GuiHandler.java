@@ -2,6 +2,7 @@ package com.scorpmod.handler;
 
 
 import com.scorpmod.container.ContainerMixer;
+import com.scorpmod.gui.GuiMixer;
 import com.scorpmod.tileentity.TileMixer;
 
 import net.minecraft.entity.player.EntityPlayer;
