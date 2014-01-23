@@ -125,11 +125,11 @@ public class TileMixer extends TileEntity implements IInventory
         {
                 super.func_145839_a(tagCompound);
 
-                NBTTagList tagList = tagCompound.getTagList("Inventory");
+                NBTTagList tagList = tagCompound.func_150295_c("Inventory", 10);
 
                 for (int i = 0; i < tagList.tagCount(); i++)
                 {
-                        NBTTagCompound tag = (NBTTagCompound) tagList.tagAt(i);
+                        NBTTagCompound tag = (NBTTagCompound) tagList.func_150305_b(i);
 
                         byte slot = tag.getByte("Slot");
 
@@ -168,12 +168,12 @@ public class TileMixer extends TileEntity implements IInventory
         {
                 if (this.inventory[0] != null && this.inventory[1] != null)
                 {
-                        ItemStack var1 = MixerRecipies.instance().getRecipeResult(this.inventory[0].getItem().itemID, this.inventory[1].getItem().itemID);
+                        ItemStack var1 = MixerRecipies.instance().getRecipeResult(this.inventory[0].getItem(), this.inventory[1].getItem());
                         if (this.inventory[2] == null)
                         {
                                 this.inventory[2] = var1.copy();
                         }
-                        else if (this.inventory[2].itemID == var1.itemID)
+                        else if (this.inventory[2] == var1)
                         {
                                 System.out.println("2");
                                 ++this.inventory[2].stackSize;
@@ -204,7 +204,7 @@ public class TileMixer extends TileEntity implements IInventory
                         return false;
                 }
 
-                ItemStack itemstack = MixerRecipies.instance().getRecipeResult(inventory[0].getItem().itemID, inventory[1].getItem().itemID);
+                ItemStack itemstack = MixerRecipies.instance().getRecipeResult(inventory[0].getItem(), inventory[1].getItem());
 
                 if (itemstack == null)
                 {
@@ -233,7 +233,7 @@ public class TileMixer extends TileEntity implements IInventory
         }
 
         @Override
-        public void updateEntity()
+        public void func_145845_h()
         {
                 if (canPress() && abc == 0)
                         abc = 1;
@@ -251,7 +251,7 @@ public class TileMixer extends TileEntity implements IInventory
                 {
                         abc++;
                 }
-                this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
+                this.worldObj.func_147586_a(field_145851_c, field_145848_d, field_145849_e);
         }
 
         public int getCookProgressScaled(int par1)

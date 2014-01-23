@@ -1,6 +1,8 @@
 package com.scorpmod.blocks;
 
+import com.scorpmod.ScorpMod;
 import com.scorpmod.libs.Reference;
+import com.scorpmod.tileentity.TileMixer;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -64,9 +66,9 @@ public class BlockMixer extends BlockContainer{
     @Override
     public boolean func_149727_a(World par1World, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
     {
-         TileMixer tEntity = (TileMixer)par1World.getBlockTileEntity(x,y,z);
+         TileMixer tEntity = (TileMixer)par1World.func_147438_o(x,y,z);
          if(tEntity != null){
-                 player.openGui(CommanderAdz.instance, 0, par1World, x, y, z);
+                 player.openGui(ScorpMod.instance, 0, par1World, x, y, z);
  //        }
          return true;
  }
