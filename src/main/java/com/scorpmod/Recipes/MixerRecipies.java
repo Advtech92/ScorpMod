@@ -49,11 +49,7 @@ public class MixerRecipies
 
         private MixerRecipies()
         {
-                addMixerRecipe(Items.gold_ingot, Items.water_bucket, new ItemStack(CommanderAdz.itemyellowBucket, 1, 0), 0.7F);
-                addMixerRecipe(Items.redstone, Items.water_bucket, new ItemStack(CommanderAdz.itemredBucket, 1, 0), 0.7F);
-                addMixerRecipe(Items.emerald, Items.water_bucket, new ItemStack(CommanderAdz.itemgreenBucket, 1, 0), 0.7F);
-                addMixerRecipe(Items.sugar, Items.water_bucket, new ItemStack(CommanderAdz.itemwhiteBucket, 1, 0), 0.7F);
-                addMixerRecipe(Items.diamond, Items.water_bucket, new ItemStack(CommanderAdz.itemturquoiseBucket, 1, 0), 0.7F);
-                addMixerRecipe(CommanderAdz.itempurplePowder.itemID, Item.bucketWater.itemID, new ItemStack(CommanderAdz.itempurpleBucket, 1, 0), 0.7F);
+                addMixerRecipe(Items.gold_ingot, Items.water_bucket, new ItemStack(Items.apple, 1, 0), 0.7F);
+                
         }
 }
