@@ -10,8 +10,8 @@ import net.minecraft.item.ItemStack;
 
 public class MixerRecipies
 {
-        private Map<ArrayList<String>, ItemStack> mixerList = new HashMap<ArrayList<String>, ItemStack>();
-        private Map<String, Float> mixerExperience = new HashMap<String, Float>();
+        private Map<ArrayList<Integer>, ItemStack> mixerList = new HashMap<ArrayList<Integer>, ItemStack>();
+        private Map<Integer, Float> mixerExperience = new HashMap<Integer, Float>();
         private static final MixerRecipies mixerBase = new MixerRecipies();
 
         public static final MixerRecipies instance()
@@ -32,14 +32,14 @@ public class MixerRecipies
                 return mixerList.get(array1) == null ? mixerList.get(array2) : mixerList.get(array1);
         }
 
-        public void addMixerRecipe(String id1, String id2, ItemStack itemStack, float experience)
+        public void addMixerRecipe(int id1, int id2, ItemStack itemStack, float experience)
         {
-                ArrayList<String> array = new ArrayList<String>();
+                ArrayList<Integer> array = new ArrayList<Integer>();
                 array.add(id1);
                 array.add(id2);
                 
                 mixerList.put(array, itemStack);
-                this.mixerExperience.put(String.valueOf(itemStack), Float.valueOf(experience));
+                this.mixerExperience.put(Integer.valueOf(itemStack.itemID), Float.valueOf(experience));
         }
 
         public float getExperience(int par1)

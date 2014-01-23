@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -14,12 +15,18 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 import com.scorpmod.blocks.BlockHandScanner;
 import com.scorpmod.blocks.BlockScorp;
+import com.scorpmod.handler.GuiHandler;
 import com.scorpmod.libs.Reference;
 import com.scorpmod.tileentity.HandScannerTile;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 public class ScorpMod
 {
+	
+	@Instance(Reference.MOD_ID)
+    public static ScorpMod instance;
+    private GuiHandler guiHandler = new GuiHandler();
+    
 	public static Block scorpBlock;
 	public static Block blockcommanderAdz;
 	public static Block blockhandScanner;
