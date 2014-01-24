@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraftforge.fluids.Fluid;
 
 import com.scorpmod.blocks.BlockBottler;
 import com.scorpmod.blocks.BlockHandScanner;
