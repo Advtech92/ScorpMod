@@ -2,8 +2,8 @@ package com.scorpmod.blocks;
 
 import com.scorpmod.ScorpMod;
 import com.scorpmod.libs.Reference;
-import com.scorpmod.tileentity.TileBottler;
 import com.scorpmod.tileentity.TileMixer;
+import com.scorpmod.tileentity.TileWasher;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -19,11 +19,11 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBottler extends BlockContainer{
+public class BlockWasher extends BlockContainer{
 
-        public BlockBottler(){
+        public BlockWasher(){
             super(Material.field_151576_e);
-            func_149663_c("bottler");
+            func_149663_c("washer");
             func_149647_a(CreativeTabs.tabBlock);
             func_149711_c(3);
         }
@@ -62,14 +62,14 @@ public class BlockBottler extends BlockContainer{
         
         @Override
         public TileEntity func_149915_a(World world, int i) {
-                return new TileBottler();
+                return new TileWasher();
         }
     @Override
     public boolean func_149727_a(World par1World, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
     {
-         TileBottler tEntity = (TileBottler)par1World.func_147438_o(x,y,z);
+         TileWasher tEntity = (TileWasher)par1World.func_147438_o(x,y,z);
          if(tEntity != null){
-                 player.openGui(ScorpMod.instance, 1, par1World, x, y, z);
+                 player.openGui(ScorpMod.instance, 2, par1World, x, y, z);
  //        }
          return true;
  }

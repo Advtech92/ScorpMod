@@ -22,7 +22,7 @@ public class BlockMixer extends BlockContainer{
 
         public BlockMixer(){
             super(Material.field_151576_e);
-            func_149663_c("mixer");
+            func_149663_c("liquidmixer");
             func_149647_a(CreativeTabs.tabBlock);
             func_149711_c(3);
         }
@@ -32,7 +32,7 @@ public class BlockMixer extends BlockContainer{
         @Override
         @SideOnly(Side.CLIENT)
         public void func_149651_a(IIconRegister reg){
-            this.side = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "sides");
+            this.side = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "side");
             this.bottom = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "top");
             this.top = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "top");
             this.front = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "front");

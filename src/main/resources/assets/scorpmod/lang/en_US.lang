@@ -1,0 +1,8 @@
+tile.scorpBlock.name=Scorp Block
+tile.handScanner.name=Hand Scanner
+tile.mixer.name=Liquid Mixer
+tile.bottler.name=Liquid Bottler
+tile.washer.name=Liquid Washer
+item.filter.name=Filter
+
+itemGroup.antichamber=ScorpMod

@@ -3,15 +3,19 @@ package com.scorpmod;
 import java.util.Arrays;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 
 import com.scorpmod.blocks.BlockBottler;
 import com.scorpmod.blocks.BlockHandScanner;
 import com.scorpmod.blocks.BlockMixer;
 import com.scorpmod.blocks.BlockScorp;
+import com.scorpmod.blocks.BlockWasher;
 import com.scorpmod.handler.GuiHandler;
+import com.scorpmod.items.FluidFilter;
 import com.scorpmod.libs.Reference;
 import com.scorpmod.tileentity.HandScannerTile;
 import com.scorpmod.tileentity.TileMixer;
+import com.scorpmod.tileentity.TileWasher;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -44,6 +48,7 @@ public class ScorpMod
 	public static Block blockturquoiseFluid;
 	public static Block blockyellowFluid;
 	
+	public static Item itemfluidFilter;
 	
     @EventHandler
     public void preinit(FMLPreInitializationEvent event)
@@ -59,11 +64,17 @@ public class ScorpMod
 		blockhandScanner = new BlockHandScanner();
 		blockliquidMixer = new BlockMixer();
 		blockliquidBottler = new BlockBottler();
+		blockliquidWasher = new BlockWasher();
+		
+		itemfluidFilter = new FluidFilter();
 
 		registerBlock(scorpBlock, "Scorp Block");
 		registerBlock(blockhandScanner, "Hand Scanner");
 		registerBlock(blockliquidMixer, "Mixer");
 		registerBlock(blockliquidBottler, "Bottler");
+		registerBlock(blockliquidWasher, "Washer");
+		
+		registerItem(itemfluidFilter, "Filter");
     }
     
     @EventHandler
@@ -74,11 +85,16 @@ public class ScorpMod
 		GameRegistry.registerTileEntity(HandScannerTile.class, "HandScannerTile");
 		GameRegistry.registerTileEntity(TileMixer.class, "MixerTile");
 		GameRegistry.registerTileEntity(TileMixer.class, "BottlerTile");
+		GameRegistry.registerTileEntity(TileWasher.class, "WasherTile");
 		networkRegisters();
     }
     
     public static void registerBlock(Block block, String name){
     	GameRegistry.registerBlock(block, name);
+    }
+    
+    public static void registerItem(Item item, String name){
+    	GameRegistry.registerItem(item, name);
     }
     public void networkRegisters(){
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, guiHandler);
