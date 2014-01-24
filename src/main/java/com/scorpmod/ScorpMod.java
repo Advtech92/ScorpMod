@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import net.minecraft.block.Block;
 
+import com.scorpmod.blocks.BlockBottler;
 import com.scorpmod.blocks.BlockHandScanner;
 import com.scorpmod.blocks.BlockMixer;
 import com.scorpmod.blocks.BlockScorp;
@@ -57,10 +58,12 @@ public class ScorpMod
         scorpBlock = new BlockScorp();
 		blockhandScanner = new BlockHandScanner();
 		blockliquidMixer = new BlockMixer();
+		blockliquidBottler = new BlockBottler();
 
 		registerBlock(scorpBlock, "Scorp Block");
 		registerBlock(blockhandScanner, "Hand Scanner");
 		registerBlock(blockliquidMixer, "Mixer");
+		registerBlock(blockliquidBottler, "Bottler");
     }
     
     @EventHandler
@@ -70,6 +73,7 @@ public class ScorpMod
 		//TileEntity Registry
 		GameRegistry.registerTileEntity(HandScannerTile.class, "HandScannerTile");
 		GameRegistry.registerTileEntity(TileMixer.class, "MixerTile");
+		GameRegistry.registerTileEntity(TileMixer.class, "BottlerTile");
 		networkRegisters();
     }
     
