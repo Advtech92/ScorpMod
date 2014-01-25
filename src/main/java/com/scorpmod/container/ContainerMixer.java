@@ -27,7 +27,7 @@ public class ContainerMixer extends Container
         
         protected TileMixer tile_entity;
 
-        public ContainerMixer(InventoryPlayer player_inventory, TileMixer tile_entity)
+        public ContainerMixer(TileMixer tile_entity, InventoryPlayer player_inventory)
         {
                 this.tile_entity = tile_entity;
 

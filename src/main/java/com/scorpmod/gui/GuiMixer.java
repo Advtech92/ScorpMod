@@ -30,7 +30,7 @@ public class GuiMixer extends GuiContainer
 
         public GuiMixer(InventoryPlayer inventory, TileMixer tile)
         {
-                super(new ContainerMixer(inventory, tile));
+                super(new ContainerMixer(tile, inventory));
                 mixerTile = tile;
         }
 
