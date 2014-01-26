@@ -9,7 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.scorpmod.container.ContainerMixer;
 import com.scorpmod.container.ContainerWasher;
-import com.scorpmod.libs.DefaultProps;
+import com.scorpmod.libs.GuiReferences;
 import com.scorpmod.tileentity.TileMixer;
 import com.scorpmod.tileentity.TileWasher;
 
@@ -55,7 +55,7 @@ public class GuiWasher extends GuiContainer
                 int k = (this.field_146294_l - this.field_146999_f) / 2;
                 int l = (this.field_146295_m - this.field_147000_g) / 2;
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-                this.field_146297_k.renderEngine.bindTexture(DefaultProps.MIXER_GUI);
+                this.field_146297_k.renderEngine.bindTexture(GuiReferences.MIXER_GUI);
                 var5 = (this.field_146294_l - this.field_146999_f) / 2;
                 var6 = (this.field_146295_m - this.field_147000_g) / 2;
 

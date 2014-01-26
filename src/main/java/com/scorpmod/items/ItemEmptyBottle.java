@@ -1,5 +1,6 @@
 package com.scorpmod.items;
 
+import com.scorpmod.ScorpMod;
 import com.scorpmod.libs.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -8,13 +9,11 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class FluidFilter extends Item {
-    public FluidFilter(){
+public class ItemEmptyBottle extends Item {
+    public ItemEmptyBottle(){
         super();
-        setUnlocalizedName("filter");
-        setCreativeTab(CreativeTabs.tabBlock);
-        maxStackSize = 1;
-        this.setMaxDamage(10);
+        setUnlocalizedName("emptybottle");
+        setCreativeTab(ScorpMod.tabscorpItems);
     }
     
 @Override

@@ -3,7 +3,9 @@ package com.scorpmod;
 import java.util.Arrays;
 
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 
 import com.scorpmod.blocks.BlockBottler;
@@ -12,7 +14,20 @@ import com.scorpmod.blocks.BlockMixer;
 import com.scorpmod.blocks.BlockScorp;
 import com.scorpmod.blocks.BlockWasher;
 import com.scorpmod.handler.GuiHandler;
-import com.scorpmod.items.FluidFilter;
+import com.scorpmod.items.ItemEmptyBottle;
+import com.scorpmod.items.ItemFluidFilter;
+import com.scorpmod.items.ItemGreenBottle;
+import com.scorpmod.items.ItemGreenBucket;
+import com.scorpmod.items.ItemPurpleBottle;
+import com.scorpmod.items.ItemPurpleBucket;
+import com.scorpmod.items.ItemRedBottle;
+import com.scorpmod.items.ItemRedBucket;
+import com.scorpmod.items.ItemTurquoiseBottle;
+import com.scorpmod.items.ItemTurquoiseBucket;
+import com.scorpmod.items.ItemWhiteBottle;
+import com.scorpmod.items.ItemWhiteBucket;
+import com.scorpmod.items.ItemYellowBottle;
+import com.scorpmod.items.ItemYellowBucket;
 import com.scorpmod.libs.Reference;
 import com.scorpmod.tileentity.HandScannerTile;
 import com.scorpmod.tileentity.TileMixer;
@@ -34,7 +49,7 @@ public class ScorpMod
 	@Instance(Reference.MOD_ID)
     public static ScorpMod instance;
     private GuiHandler guiHandler = new GuiHandler();
-    
+
 	public static Block scorpBlock;
 	public static Block blockcommanderAdz;
 	public static Block blockhandScanner;
@@ -51,6 +66,27 @@ public class ScorpMod
 	
 	public static Item itemfluidFilter;
 	
+	public static Item itemgreenBottle;
+	public static Item itempurpleBottle;
+	public static Item itemredBottle;
+	public static Item itemturquoiseBottle;
+	public static Item itemwhiteBottle;
+	public static Item itemyellowBottle;
+	
+	public static Item itememptyBottle;
+	public static Item itemgreenBucket;
+	public static Item itempurpleBucket;
+	public static Item itemredBucket;
+	public static Item itemturquoiseBucket;
+	public static Item itemwhiteBucket;
+	public static Item itemyellowBucket;
+
+    public static CreativeTabs tabscorpItems = new CreativeTabs("tabscorpItems"){
+         public Item getTabIconItem(){
+                return ScorpMod.itemyellowBottle;
+         }
+        };
+        
     @EventHandler
     public void preinit(FMLPreInitializationEvent event)
     {
@@ -67,7 +103,23 @@ public class ScorpMod
 		blockliquidBottler = new BlockBottler();
 		blockliquidWasher = new BlockWasher();
 		
-		itemfluidFilter = new FluidFilter();
+		itemfluidFilter = new ItemFluidFilter();
+		
+		itemgreenBottle = new ItemGreenBottle();
+		itempurpleBottle = new ItemPurpleBottle();
+		itemredBottle = new ItemRedBottle();
+		itemturquoiseBottle = new ItemTurquoiseBottle();
+		itemwhiteBottle = new ItemWhiteBottle();
+		itemyellowBottle = new ItemYellowBottle();
+		
+		itememptyBottle = new ItemEmptyBottle();
+		
+		itemgreenBucket = new ItemGreenBucket();
+		itempurpleBucket = new ItemPurpleBucket();
+		itemredBucket = new ItemRedBucket();
+		itemturquoiseBucket = new ItemTurquoiseBucket();
+		itemwhiteBucket = new ItemWhiteBucket();
+		itemyellowBucket = new ItemYellowBucket();
 
 		registerBlock(scorpBlock, "Scorp Block");
 		registerBlock(blockhandScanner, "Hand Scanner");
@@ -76,6 +128,22 @@ public class ScorpMod
 		registerBlock(blockliquidWasher, "Washer");
 		
 		registerItem(itemfluidFilter, "Filter");
+		
+		registerItem(itemgreenBottle, "Green Bottle");
+		registerItem(itempurpleBottle, "Purple Bottle");
+		registerItem(itemredBottle, "Red Bottle");
+		registerItem(itemturquoiseBottle, "Turquoise Bottle");
+		registerItem(itemwhiteBottle, "White Bottle");
+		registerItem(itemyellowBottle, "Yellow Bottle");
+		
+		registerItem(itememptyBottle, "Empty Bottle");
+		
+		registerItem(itemgreenBucket, "Green Bucket");
+		registerItem(itempurpleBucket, "Purple Bucket");
+		registerItem(itemredBucket, "Red Bucket");
+		registerItem(itemturquoiseBucket, "Turquoise Bucket");
+		registerItem(itemwhiteBucket, "White Bucket");
+		registerItem(itemyellowBucket, "Yellow Bucket");
     }
     
     @EventHandler
@@ -100,5 +168,4 @@ public class ScorpMod
     public void networkRegisters(){
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, guiHandler);
 }
-    
 }

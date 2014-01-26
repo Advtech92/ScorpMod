@@ -1,8 +1,22 @@
 tile.scorpBlock.name=Scorp Block
 tile.handScanner.name=Hand Scanner
-tile.mixer.name=Liquid Mixer
+tile.liquidmixer.name=Liquid Mixer
 tile.bottler.name=Liquid Bottler
 tile.washer.name=Liquid Washer
 item.filter.name=Filter
+item.emptybottle.name=Empty Bottle
+item.greenbucket.name=Green Bucket
+item.purplebucket.name=Purple Bucket
+item.redbucket.name=Red Bucket
+item.turquoisebucket.name=Turquoise Bucket
+item.whitebucket.name=White Bucket
+item.yellowbucket.name=Yellow Bucket
+item.greenbottle.name=Green Bottle
+item.purplebottle.name=Purple Bottle
+item.redbottle.name=Red Bottle
+item.turquoisebottle.name=Turquoise Bottle
+item.whitebottle.name=White Bottle
+item.yellowbottle.name=Yellow Bottle
+itemGroup.tabscorpItems=ScorpMod Items
 
 itemGroup.antichamber=ScorpMod

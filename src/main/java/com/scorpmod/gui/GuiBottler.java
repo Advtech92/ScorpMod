@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 
 import com.scorpmod.container.ContainerBottler;
-import com.scorpmod.libs.DefaultProps;
+import com.scorpmod.libs.GuiReferences;
 import com.scorpmod.tileentity.TileBottler;
 
 import cpw.mods.fml.relauncher.Side;
@@ -53,7 +53,7 @@ public class GuiBottler extends GuiContainer
                 int k = (this.field_146294_l - this.field_146999_f) / 2;
                 int l = (this.field_146295_m - this.field_147000_g) / 2;
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-                this.field_146297_k.renderEngine.bindTexture(DefaultProps.MIXER_GUI);
+                this.field_146297_k.renderEngine.bindTexture(GuiReferences.MIXER_GUI);
                 var5 = (this.field_146294_l - this.field_146999_f) / 2;
                 var6 = (this.field_146295_m - this.field_147000_g) / 2;
 
