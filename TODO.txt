@@ -6,6 +6,9 @@ To-Do
 -Recipes (When Fluids are done)
 -Dirty Bottles
 -Buckets connected to liquids (Bucket Handler etc.)
+-Rods
+-Make bottles drinkable
+-Crafting recipes
 
 Done
 
