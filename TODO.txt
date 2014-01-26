@@ -1,7 +1,15 @@
 TODO LIST
 
+To-Do
+
 -Fluids
 -Recipes (When Fluids are done)
--Dirty drinks + drinks (Need Fluids!)
+-Dirty Bottles
+-Buckets connected to liquids (Bucket Handler etc.)
+
+Done
+
+-Buckets
+-Bottles
 
 NEED FLUIDS TO UPDATE
