@@ -20,6 +20,7 @@ import com.scorpmod.items.ItemGreenBottle;
 import com.scorpmod.items.ItemGreenBucket;
 import com.scorpmod.items.ItemPurpleBottle;
 import com.scorpmod.items.ItemPurpleBucket;
+import com.scorpmod.items.ItemPurpleDust;
 import com.scorpmod.items.ItemRedBottle;
 import com.scorpmod.items.ItemRedBucket;
 import com.scorpmod.items.ItemTurquoiseBottle;
@@ -65,6 +66,7 @@ public class ScorpMod
 	public static Block blockyellowFluid;
 	
 	public static Item itemfluidFilter;
+	public static Item itempurpleDust;
 	
 	public static Item itemgreenBottle;
 	public static Item itempurpleBottle;
@@ -104,6 +106,7 @@ public class ScorpMod
 		blockliquidWasher = new BlockWasher();
 		
 		itemfluidFilter = new ItemFluidFilter();
+		itempurpleDust = new ItemPurpleDust();
 		
 		itemgreenBottle = new ItemGreenBottle();
 		itempurpleBottle = new ItemPurpleBottle();
@@ -128,6 +131,7 @@ public class ScorpMod
 		registerBlock(blockliquidWasher, "Washer");
 		
 		registerItem(itemfluidFilter, "Filter");
+		registerItem(itempurpleDust, "Purple Dust");
 		
 		registerItem(itemgreenBottle, "Green Bottle");
 		registerItem(itempurpleBottle, "Purple Bottle");
