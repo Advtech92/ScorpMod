@@ -162,12 +162,12 @@ public class ScorpMod
 		registerItem(itemwhiteBottle, "White Bottle");
 		registerItem(itemyellowBottle, "Yellow Bottle");
 		
-		registerItem(itemgreendirtyBottle, "Green Bottle");
-		registerItem(itempurpledirtyBottle, "Purple Bottle");
-		registerItem(itemreddirtyBottle, "Red Bottle");
-		registerItem(itemturquoisedirtyBottle, "Turquoise Bottle");
-		registerItem(itemwhitedirtyBottle, "White Bottle");
-		registerItem(itemyellowdirtyBottle, "Yellow Bottle");
+		registerItem(itemgreendirtyBottle, "Dirty Green Bottle");
+		registerItem(itempurpledirtyBottle, "Dirty Purple Bottle");
+		registerItem(itemreddirtyBottle, "Dirty Red Bottle");
+		registerItem(itemturquoisedirtyBottle, "Dirty Turquoise Bottle");
+		registerItem(itemwhitedirtyBottle, "Dirty White Bottle");
+		registerItem(itemyellowdirtyBottle, "Dirty Yellow Bottle");
 		
 		registerItem(itememptyBottle, "Empty Bottle");
 		

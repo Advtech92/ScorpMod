@@ -18,12 +18,12 @@ item.turquoisebottle.name=Turquoise Bottle
 item.whitebottle.name=White Bottle
 item.yellowbottle.name=Yellow Bottle
 
-item.greendirtybottle.name=Green Bottle
-item.purpledirtybottle.name=Purple Bottle
-item.reddirtybottle.name=Red Bottle
-item.turquoisedirtybottle.name=Turquoise Bottle
-item.whitedirtybottle.name=White Bottle
-item.yellowdirtybottle.name=Yellow Bottle
+item.greendirtybottle.name=Dirty Green Bottle
+item.purpledirtybottle.name=Dirty Purple Bottle
+item.reddirtybottle.name=Dirty Red Bottle
+item.turquoisedirtybottle.name=Dirty Turquoise Bottle
+item.whitedirtybottle.name=Dirty White Bottle
+item.yellowdirtybottle.name=Dirty Yellow Bottle
 
 item.purpledust.name=Purple Dust
 
