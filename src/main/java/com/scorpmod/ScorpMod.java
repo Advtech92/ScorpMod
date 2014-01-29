@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
@@ -187,6 +189,70 @@ public class ScorpMod
 		GameRegistry.registerTileEntity(TileMixer.class, "BottlerTile");
 		GameRegistry.registerTileEntity(TileWasher.class, "WasherTile");
 		networkRegisters();
+		
+		GameRegistry.addRecipe(new ItemStack(ScorpMod.itemfluidFilter),
+				new Object[]{
+			"sss",
+			"sgs",
+			"sss",
+			's', Items.stick,
+			'g', Blocks.glass_pane,
+		});
+		
+		GameRegistry.addRecipe(new ItemStack(ScorpMod.itememptyBottle),
+				new Object[]{
+			" c ",
+			"g g",
+			" g ",
+			'c', Items.clay_ball,
+			'g', Blocks.glass_pane,
+		});
+		
+		GameRegistry.addRecipe(new ItemStack(ScorpMod.blockhandScanner),
+				new Object[]{
+			"cic",
+			"iri",
+			"cic",
+			'c', Items.clay_ball,
+			'i', Items.iron_ingot,
+			'r', Items.redstone,
+		});
+		
+		GameRegistry.addRecipe(new ItemStack(ScorpMod.blockliquidBottler),
+				new Object[]{
+			"ibi",
+			"iBi",
+			"ici",
+			'i', Items.iron_ingot,
+			'b', ScorpMod.itememptyBottle,
+			'B', Items.bucket,
+			'c', Items.clay_ball,
+		});
+		
+		GameRegistry.addRecipe(new ItemStack(ScorpMod.blockliquidMixer),
+				new Object[]{
+			"iBi",
+			"iri",
+			"ici",
+			'i', Items.iron_ingot,
+			'B', Items.bucket,
+			'r', Items.redstone,
+			'c', Items.clay_ball,
+		});
+		
+		GameRegistry.addRecipe(new ItemStack(ScorpMod.blockliquidWasher),
+				new Object[]{
+			"ifi",
+			"iri",
+			"ici",
+			'i', Items.iron_ingot,
+			'r', Items.redstone,
+			'f', ScorpMod.itemfluidFilter,
+			'c', Items.clay_ball,
+		});
+		ItemStack dyeStack = new ItemStack(Items.dye, 1, 5);
+		GameRegistry.addShapelessRecipe(new ItemStack(ScorpMod.itempurpleDust, 1),
+				dyeStack, Items.sugar);
     }
     
     public static void registerBlock(Block block, String name){
