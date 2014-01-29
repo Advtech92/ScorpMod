@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.scorpmod.ScorpMod;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -49,7 +51,12 @@ public class BottlerRecipies
 
         private BottlerRecipies()
         {
-                addMixerRecipe(Items.gold_ingot, Items.water_bucket, new ItemStack(Items.apple, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itememptyBottle, ScorpMod.itemwhiteBucket, new ItemStack(ScorpMod.itemwhitedirtyBottle, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itememptyBottle, ScorpMod.itemgreenBucket, new ItemStack(ScorpMod.itemgreendirtyBottle, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itememptyBottle, ScorpMod.itempurpleBucket, new ItemStack(ScorpMod.itempurpledirtyBottle, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itememptyBottle, ScorpMod.itemyellowBucket, new ItemStack(ScorpMod.itemyellowdirtyBottle, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itememptyBottle, ScorpMod.itemredBucket, new ItemStack(ScorpMod.itemreddirtyBottle, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itememptyBottle, ScorpMod.itemturquoiseBucket, new ItemStack(ScorpMod.itemturquoisedirtyBottle, 1, 0), 0.7F);
                 
         }
 }

@@ -18,17 +18,23 @@ import com.scorpmod.items.ItemEmptyBottle;
 import com.scorpmod.items.ItemFluidFilter;
 import com.scorpmod.items.ItemGreenBottle;
 import com.scorpmod.items.ItemGreenBucket;
+import com.scorpmod.items.ItemGreenDirtyBottle;
 import com.scorpmod.items.ItemPurpleBottle;
 import com.scorpmod.items.ItemPurpleBucket;
+import com.scorpmod.items.ItemPurpleDirtyBottle;
 import com.scorpmod.items.ItemPurpleDust;
 import com.scorpmod.items.ItemRedBottle;
 import com.scorpmod.items.ItemRedBucket;
+import com.scorpmod.items.ItemRedDirtyBottle;
 import com.scorpmod.items.ItemTurquoiseBottle;
 import com.scorpmod.items.ItemTurquoiseBucket;
+import com.scorpmod.items.ItemTurquoiseDirtyBottle;
 import com.scorpmod.items.ItemWhiteBottle;
 import com.scorpmod.items.ItemWhiteBucket;
+import com.scorpmod.items.ItemWhiteDirtyBottle;
 import com.scorpmod.items.ItemYellowBottle;
 import com.scorpmod.items.ItemYellowBucket;
+import com.scorpmod.items.ItemYellowDirtyBottle;
 import com.scorpmod.libs.Reference;
 import com.scorpmod.tileentity.HandScannerTile;
 import com.scorpmod.tileentity.TileMixer;
@@ -75,6 +81,13 @@ public class ScorpMod
 	public static Item itemwhiteBottle;
 	public static Item itemyellowBottle;
 	
+	public static Item itemgreendirtyBottle;
+	public static Item itempurpledirtyBottle;
+	public static Item itemreddirtyBottle;
+	public static Item itemturquoisedirtyBottle;
+	public static Item itemwhitedirtyBottle;
+	public static Item itemyellowdirtyBottle;
+	
 	public static Item itememptyBottle;
 	public static Item itemgreenBucket;
 	public static Item itempurpleBucket;
@@ -115,6 +128,13 @@ public class ScorpMod
 		itemwhiteBottle = new ItemWhiteBottle();
 		itemyellowBottle = new ItemYellowBottle();
 		
+		itemgreendirtyBottle = new ItemGreenDirtyBottle();
+		itempurpledirtyBottle = new ItemPurpleDirtyBottle();
+		itemreddirtyBottle = new ItemRedDirtyBottle();
+		itemturquoisedirtyBottle = new ItemTurquoiseDirtyBottle();
+		itemwhitedirtyBottle = new ItemWhiteDirtyBottle();
+		itemyellowdirtyBottle = new ItemYellowDirtyBottle();
+		
 		itememptyBottle = new ItemEmptyBottle();
 		
 		itemgreenBucket = new ItemGreenBucket();
@@ -139,6 +159,13 @@ public class ScorpMod
 		registerItem(itemturquoiseBottle, "Turquoise Bottle");
 		registerItem(itemwhiteBottle, "White Bottle");
 		registerItem(itemyellowBottle, "Yellow Bottle");
+		
+		registerItem(itemgreendirtyBottle, "Green Bottle");
+		registerItem(itempurpledirtyBottle, "Purple Bottle");
+		registerItem(itemreddirtyBottle, "Red Bottle");
+		registerItem(itemturquoisedirtyBottle, "Turquoise Bottle");
+		registerItem(itemwhitedirtyBottle, "White Bottle");
+		registerItem(itemyellowdirtyBottle, "Yellow Bottle");
 		
 		registerItem(itememptyBottle, "Empty Bottle");
 		

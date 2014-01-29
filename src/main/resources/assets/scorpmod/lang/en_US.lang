@@ -17,8 +17,14 @@ item.redbottle.name=Red Bottle
 item.turquoisebottle.name=Turquoise Bottle
 item.whitebottle.name=White Bottle
 item.yellowbottle.name=Yellow Bottle
+
+item.greendirtybottle.name=Green Bottle
+item.purpledirtybottle.name=Purple Bottle
+item.reddirtybottle.name=Red Bottle
+item.turquoisedirtybottle.name=Turquoise Bottle
+item.whitedirtybottle.name=White Bottle
+item.yellowdirtybottle.name=Yellow Bottle
+
 item.purpledust.name=Purple Dust
 
 itemGroup.tabscorpItems=ScorpMod Items
-
-itemGroup.antichamber=ScorpMod

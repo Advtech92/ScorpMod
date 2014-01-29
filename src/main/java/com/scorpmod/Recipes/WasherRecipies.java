@@ -51,7 +51,12 @@ public class WasherRecipies
 
         private WasherRecipies()
         {
-                addMixerRecipe(Items.gold_ingot, ScorpMod.itemfluidFilter, new ItemStack(Items.apple, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itemfluidFilter, ScorpMod.itemreddirtyBottle, new ItemStack(ScorpMod.itemredBottle, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itemfluidFilter, ScorpMod.itemyellowdirtyBottle, new ItemStack(ScorpMod.itemyellowBottle, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itemfluidFilter, ScorpMod.itemwhitedirtyBottle, new ItemStack(ScorpMod.itemwhiteBottle, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itemfluidFilter, ScorpMod.itemturquoisedirtyBottle, new ItemStack(ScorpMod.itemturquoiseBottle, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itemfluidFilter, ScorpMod.itempurpledirtyBottle, new ItemStack(ScorpMod.itempurpleBottle, 1, 0), 0.7F);
+                addMixerRecipe(ScorpMod.itemfluidFilter, ScorpMod.itemgreendirtyBottle, new ItemStack(ScorpMod.itemgreenBottle, 1, 0), 0.7F);
                 
         }
 }
