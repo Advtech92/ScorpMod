@@ -21,13 +21,20 @@ import java.util.Arrays;
 
 
 
+
+
+
+
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.scorpmod.blocks.BlockBottler;
@@ -36,6 +43,7 @@ import com.scorpmod.blocks.BlockMixer;
 import com.scorpmod.blocks.BlockScorp;
 import com.scorpmod.blocks.BlockWasher;
 import com.scorpmod.fluid.BlockFluid;
+import com.scorpmod.handler.BucketHandler;
 import com.scorpmod.handler.GuiHandler;
 import com.scorpmod.items.ItemEmptyBottle;
 import com.scorpmod.items.ItemFluidFilter;
@@ -206,6 +214,13 @@ public class ScorpMod
 		registerItem(itemwhiteBucket, "White Bucket");
 		registerItem(itemyellowBucket, "Yellow Bucket");
 		
+		blockwhiteFluid = new BlockFluid(fluidWhite, Material.field_151586_h).func_149663_c("fluidwhite").func_149658_d("scorpmod:fluidwhite");
+		blockgreenFluid = new BlockFluid(fluidGreen, Material.field_151586_h).func_149663_c("fluidgreen").func_149658_d("scorpmod:fluidgreen");
+		blockpurpleFluid = new BlockFluid(fluidPurple, Material.field_151586_h).func_149663_c("fluidpurple").func_149658_d("scorpmod:fluidpurple");
+		blockredFluid = new BlockFluid(fluidRed, Material.field_151586_h).func_149663_c("fluidred").func_149658_d("scorpmod:fluidred");
+		blockturquoiseFluid = new BlockFluid(fluidTurquoise, Material.field_151586_h).func_149663_c("fluidturquoise").func_149658_d("scorpmod:fluidturquoise");
+		blockyellowFluid = new BlockFluid(fluidYellow, Material.field_151586_h).func_149663_c("fluidyellow").func_149658_d("scorpmod:fluidyellow");
+		
 		FluidRegistry.registerFluid(fluidWhite);
 		FluidRegistry.registerFluid(fluidGreen);
 		FluidRegistry.registerFluid(fluidPurple);
@@ -213,19 +228,27 @@ public class ScorpMod
 		FluidRegistry.registerFluid(fluidTurquoise);
 		FluidRegistry.registerFluid(fluidYellow);
 		
-		blockwhiteFluid = new BlockFluid(fluidWhite).func_149663_c("fluidwhite").func_149658_d("scorpmod:fluidwhite");
-		blockgreenFluid = new BlockFluid(fluidGreen).func_149663_c("fluidgreen").func_149658_d("scorpmod:fluidgreen");
-		blockpurpleFluid = new BlockFluid(fluidPurple).func_149663_c("fluidpurple").func_149658_d("scorpmod:fluidpurple");
-		blockredFluid = new BlockFluid(fluidRed).func_149663_c("fluidred").func_149658_d("scorpmod:fluidred");
-		blockturquoiseFluid = new BlockFluid(fluidTurquoise).func_149663_c("fluidturquoise").func_149658_d("scorpmod:fluidturquoise");
-		blockyellowFluid = new BlockFluid(fluidYellow).func_149663_c("fluidyellow").func_149658_d("scorpmod:fluidyellow");
-		
 		registerBlock(blockwhiteFluid, "whitefluidblock");
 		registerBlock(blockgreenFluid, "greenfluidblock");
 		registerBlock(blockpurpleFluid, "purplefluidblock");
 		registerBlock(blockredFluid, "redfluidblock");
 		registerBlock(blockturquoiseFluid, "turquoisefluidblock");
 		registerBlock(blockyellowFluid, "yellowfluidblock");
+		
+        BucketHandler.INSTANCE.buckets.put(blockwhiteFluid, itemwhiteBucket);
+        BucketHandler.INSTANCE.buckets.put(blockgreenFluid, itemgreenBucket);
+        BucketHandler.INSTANCE.buckets.put(blockpurpleFluid, itempurpleBucket);
+        BucketHandler.INSTANCE.buckets.put(blockredFluid, itemredBucket);
+        BucketHandler.INSTANCE.buckets.put(blockturquoiseFluid, itemturquoiseBucket);
+        BucketHandler.INSTANCE.buckets.put(blockyellowFluid, itemyellowBucket);
+        
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("white", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemwhiteBucket), new ItemStack(Items.bucket));
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("green", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemgreenBucket), new ItemStack(Items.bucket));
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("purple", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itempurpleBucket), new ItemStack(Items.bucket));
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("red", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemredBucket), new ItemStack(Items.bucket));
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("turquoise", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemturquoiseBucket), new ItemStack(Items.bucket));
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("yellow", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemyellowBucket), new ItemStack(Items.bucket));
+        MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
     }
     
     @EventHandler

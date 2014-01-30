@@ -6,6 +6,7 @@ import java.util.Map;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
@@ -38,7 +39,7 @@ public class BucketHandler {
 
             Item bucket = buckets.get(block);
             if (bucket != null && world.getBlockMetadata(pos.blockX, pos.blockY, pos.blockZ) == 0) {
-                    world.func_147449_b(pos.blockX, pos.blockY, pos.blockZ, 0);
+                    world.func_147449_b(pos.blockX, pos.blockY, pos.blockZ, Blocks.air);
                     return new ItemStack(bucket);
             } else
                     return null;

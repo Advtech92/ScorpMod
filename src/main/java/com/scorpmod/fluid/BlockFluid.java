@@ -20,8 +20,8 @@ public class BlockFluid extends BlockFluidClassic{
 	@SideOnly(Side.CLIENT)
 	public IIcon flowingIcon;
 	
-	public BlockFluid(Fluid fluid) {
-		super(fluid, Material.field_151586_h);
+	public BlockFluid(Fluid fluid, Material material) {
+		super(fluid, material);
         func_149647_a(CreativeTabs.tabBlock);
 	}
 	
