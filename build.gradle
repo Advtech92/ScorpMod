@@ -18,9 +18,9 @@ buildscript {
 
 apply plugin: "forge"
 
-// edit here to adjust your stuff.
+// stuff specific to my mod
 group = 'com.scorpmod'
-version = "prerelease-0.1"
+version = "0.1"
 archivesBaseName = 'ScorpMod'
 
 // spit out the version for debugging sake

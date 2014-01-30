@@ -214,19 +214,26 @@ public class ScorpMod
 		registerItem(itemwhiteBucket, "White Bucket");
 		registerItem(itemyellowBucket, "Yellow Bucket");
 		
-		blockwhiteFluid = new BlockFluid(fluidWhite, Material.field_151586_h).func_149663_c("fluidwhite").func_149658_d("scorpmod:fluidwhite");
-		blockgreenFluid = new BlockFluid(fluidGreen, Material.field_151586_h).func_149663_c("fluidgreen").func_149658_d("scorpmod:fluidgreen");
-		blockpurpleFluid = new BlockFluid(fluidPurple, Material.field_151586_h).func_149663_c("fluidpurple").func_149658_d("scorpmod:fluidpurple");
-		blockredFluid = new BlockFluid(fluidRed, Material.field_151586_h).func_149663_c("fluidred").func_149658_d("scorpmod:fluidred");
-		blockturquoiseFluid = new BlockFluid(fluidTurquoise, Material.field_151586_h).func_149663_c("fluidturquoise").func_149658_d("scorpmod:fluidturquoise");
-		blockyellowFluid = new BlockFluid(fluidYellow, Material.field_151586_h).func_149663_c("fluidyellow").func_149658_d("scorpmod:fluidyellow");
-		
+		fluidWhite = new Fluid("white");
+		fluidGreen = new Fluid("green");
+        fluidPurple = new Fluid("purple");
+        fluidRed = new Fluid("red");
+        fluidTurquoise = new Fluid("turquoise");
+        fluidYellow = new Fluid("yellow");
+        
 		FluidRegistry.registerFluid(fluidWhite);
 		FluidRegistry.registerFluid(fluidGreen);
 		FluidRegistry.registerFluid(fluidPurple);
 		FluidRegistry.registerFluid(fluidRed);
 		FluidRegistry.registerFluid(fluidTurquoise);
 		FluidRegistry.registerFluid(fluidYellow);
+		
+		blockwhiteFluid = new BlockFluid(fluidWhite, Material.field_151586_h).func_149663_c("fluidwhite").func_149658_d("scorpmod:fluidwhite");
+		blockgreenFluid = new BlockFluid(fluidGreen, Material.field_151586_h).func_149663_c("fluidgreen").func_149658_d("scorpmod:fluidgreen");
+		blockpurpleFluid = new BlockFluid(fluidPurple, Material.field_151586_h).func_149663_c("fluidpurple").func_149658_d("scorpmod:fluidpurple");
+		blockredFluid = new BlockFluid(fluidRed, Material.field_151586_h).func_149663_c("fluidred").func_149658_d("scorpmod:fluidred");
+		blockturquoiseFluid = new BlockFluid(fluidTurquoise, Material.field_151586_h).func_149663_c("fluidturquoise").func_149658_d("scorpmod:fluidturquoise");
+		blockyellowFluid = new BlockFluid(fluidYellow, Material.field_151586_h).func_149663_c("fluidyellow").func_149658_d("scorpmod:fluidyellow");
 		
 		registerBlock(blockwhiteFluid, "whitefluidblock");
 		registerBlock(blockgreenFluid, "greenfluidblock");
@@ -242,12 +249,6 @@ public class ScorpMod
         BucketHandler.INSTANCE.buckets.put(blockturquoiseFluid, itemturquoiseBucket);
         BucketHandler.INSTANCE.buckets.put(blockyellowFluid, itemyellowBucket);
         
-        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("white", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemwhiteBucket), new ItemStack(Items.bucket));
-        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("green", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemgreenBucket), new ItemStack(Items.bucket));
-        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("purple", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itempurpleBucket), new ItemStack(Items.bucket));
-        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("red", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemredBucket), new ItemStack(Items.bucket));
-        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("turquoise", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemturquoiseBucket), new ItemStack(Items.bucket));
-        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("yellow", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemyellowBucket), new ItemStack(Items.bucket));
         MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
     }
     
@@ -260,6 +261,13 @@ public class ScorpMod
 		GameRegistry.registerTileEntity(TileMixer.class, "MixerTile");
 		GameRegistry.registerTileEntity(TileMixer.class, "BottlerTile");
 		GameRegistry.registerTileEntity(TileWasher.class, "WasherTile");
+		
+		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("white", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemwhiteBucket), new ItemStack(Items.bucket));
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("green", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemgreenBucket), new ItemStack(Items.bucket));
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("purple", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itempurpleBucket), new ItemStack(Items.bucket));
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("red", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemredBucket), new ItemStack(Items.bucket));
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("turquoise", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemturquoiseBucket), new ItemStack(Items.bucket));
+        FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("yellow", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemyellowBucket), new ItemStack(Items.bucket));
 		networkRegisters();
 		
 		GameRegistry.addRecipe(new ItemStack(ScorpMod.itemfluidFilter),
