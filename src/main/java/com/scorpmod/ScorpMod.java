@@ -2,6 +2,25 @@ package com.scorpmod;
 
 import java.util.Arrays;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -9,12 +28,14 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 
 import com.scorpmod.blocks.BlockBottler;
 import com.scorpmod.blocks.BlockHandScanner;
 import com.scorpmod.blocks.BlockMixer;
 import com.scorpmod.blocks.BlockScorp;
 import com.scorpmod.blocks.BlockWasher;
+import com.scorpmod.fluid.BlockFluid;
 import com.scorpmod.handler.GuiHandler;
 import com.scorpmod.items.ItemEmptyBottle;
 import com.scorpmod.items.ItemFluidFilter;
@@ -48,8 +69,8 @@ import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 public class ScorpMod
@@ -97,6 +118,13 @@ public class ScorpMod
 	public static Item itemturquoiseBucket;
 	public static Item itemwhiteBucket;
 	public static Item itemyellowBucket;
+	
+	public static Fluid fluidWhite;
+	public static Fluid fluidGreen;
+	public static Fluid fluidPurple;
+	public static Fluid fluidRed;
+	public static Fluid fluidTurquoise;
+	public static Fluid fluidYellow;
 
     public static CreativeTabs tabscorpItems = new CreativeTabs("tabscorpItems"){
          public Item getTabIconItem(){
@@ -177,6 +205,27 @@ public class ScorpMod
 		registerItem(itemturquoiseBucket, "Turquoise Bucket");
 		registerItem(itemwhiteBucket, "White Bucket");
 		registerItem(itemyellowBucket, "Yellow Bucket");
+		
+		FluidRegistry.registerFluid(fluidWhite);
+		FluidRegistry.registerFluid(fluidGreen);
+		FluidRegistry.registerFluid(fluidPurple);
+		FluidRegistry.registerFluid(fluidRed);
+		FluidRegistry.registerFluid(fluidTurquoise);
+		FluidRegistry.registerFluid(fluidYellow);
+		
+		blockwhiteFluid = new BlockFluid(fluidWhite).func_149663_c("fluidwhite").func_149658_d("scorpmod:fluidwhite");
+		blockgreenFluid = new BlockFluid(fluidGreen).func_149663_c("fluidgreen").func_149658_d("scorpmod:fluidgreen");
+		blockpurpleFluid = new BlockFluid(fluidPurple).func_149663_c("fluidpurple").func_149658_d("scorpmod:fluidpurple");
+		blockredFluid = new BlockFluid(fluidRed).func_149663_c("fluidred").func_149658_d("scorpmod:fluidred");
+		blockturquoiseFluid = new BlockFluid(fluidTurquoise).func_149663_c("fluidturquoise").func_149658_d("scorpmod:fluidturquoise");
+		blockyellowFluid = new BlockFluid(fluidYellow).func_149663_c("fluidyellow").func_149658_d("scorpmod:fluidyellow");
+		
+		registerBlock(blockwhiteFluid, "whitefluidblock");
+		registerBlock(blockgreenFluid, "greenfluidblock");
+		registerBlock(blockpurpleFluid, "purplefluidblock");
+		registerBlock(blockredFluid, "redfluidblock");
+		registerBlock(blockturquoiseFluid, "turquoisefluidblock");
+		registerBlock(blockyellowFluid, "yellowfluidblock");
     }
     
     @EventHandler
