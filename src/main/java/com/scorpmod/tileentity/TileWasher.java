@@ -178,7 +178,6 @@ public class TileWasher extends TileEntity implements IInventory
                         }
                         else if (this.inventory[2] == var1)
                         {
-                                System.out.println("2");
                                 ++this.inventory[2].stackSize;
                         }
                         this.inventory[0].getItem().setContainerItem(null);
@@ -251,7 +250,6 @@ public class TileWasher extends TileEntity implements IInventory
                         if (canPress())
                         {
                                 pressItem();
-                                System.out.println("Its 100: " + abc);
                         }
                         abc = 0;
                 }

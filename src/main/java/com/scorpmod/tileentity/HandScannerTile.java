@@ -9,18 +9,14 @@ public class HandScannerTile extends TileEntity {
 
         @Override
         public void func_145841_b(NBTTagCompound nbt){
-        		System.out.println("Written NBT");
         		super.func_145841_b(nbt);
-        		System.out.println(oName);
                 nbt.setString("oName", oName);
                 
         }
         
         @Override
         public void func_145839_a(NBTTagCompound nbt){
-        		System.out.println("Read NBT");
         		super.func_145839_a(nbt);
-                oName = nbt.getString("oName");
                 System.out.println(oName);
                 
 

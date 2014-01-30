@@ -61,7 +61,6 @@ public class GuiBottler extends GuiContainer
                 int var7 = 0;
                 if (this.BottlerTile.canPress())
                 {
-                        System.out.println(this.BottlerTile.abc);
                         x = (this.field_146294_l - this.field_146999_f) / 2 + 61;
                         y = (this.field_146295_m - this.field_147000_g) / 2 + 19;
                         progress = (int) (0.59 * this.BottlerTile.abc);
