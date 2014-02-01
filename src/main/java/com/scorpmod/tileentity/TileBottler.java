@@ -120,7 +120,17 @@ public class TileBottler extends TileEntity implements ISidedInventory
         @Override
         public boolean isItemValidForSlot(int i, ItemStack itemstack)
         {
-                return i == 0 || i == 1 ;
+                if (i == 0 || i == 1)
+                {
+                	for (ArrayList<Item> a : BottlerRecipes.bottlerList)
+                	{
+                		for (Item i : a)
+                		{
+                			// TODO more things ;)
+                		}
+                	}
+                }
+                return true; // Temporary
         }
 
         @Override
