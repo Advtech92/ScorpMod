@@ -1,16 +1,20 @@
 package com.scorpmod.tileentity;
 
+import java.util.ArrayList;
+
+import com.scorpmod.Recipes.BottlerRecipies;
 import com.scorpmod.Recipes.MixerRecipies;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileMixer extends TileEntity implements IInventory
+public class TileMixer extends TileEntity implements ISidedInventory
 {
         private ItemStack[] inventory;
         public int pressTime = 0;
@@ -114,12 +118,6 @@ public class TileMixer extends TileEntity implements IInventory
         @Override
         public void closeChest()
         {
-        }
-
-        @Override
-        public boolean isItemValidForSlot(int i, ItemStack itemstack)
-        {
-                return false;
         }
 
         @Override
@@ -257,6 +255,37 @@ public class TileMixer extends TileEntity implements IInventory
         public int getCookProgressScaled(int par1)
         {
                 return this.abc * par1 / 50;
+        }
+
+		@Override
+		public int[] getAccessibleSlotsFromSide(int var1) {
+			return new int[]{0,1};}
+
+		@Override
+		public boolean canInsertItem(int var1, ItemStack var2, int var3) {
+			return true;
+		}
+
+		@Override
+		public boolean canExtractItem(int var1, ItemStack var2, int var3) {
+			return true;
+		}
+        @Override
+        public boolean isItemValidForSlot(int i, ItemStack itemstack)
+        {
+                if (i == 0 || i == 1)
+                {
+                	for (ArrayList<Item> a : BottlerRecipies.instance().bottlerList.keySet())
+                	{
+                		for (Item l : a)
+                		{
+                			if(itemstack.getItem() == l){
+                				return true;
+                			}
+                		}
+                	}
+                }
+				return false;
         }
 
 }

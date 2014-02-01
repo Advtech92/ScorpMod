@@ -118,23 +118,7 @@ public class TileBottler extends TileEntity implements ISidedInventory
         {
         }
 
-        @Override
-        public boolean isItemValidForSlot(int i, ItemStack itemstack)
-        {
-                if (i == 0 || i == 1)
-                {
-                	for (ArrayList<Item> a : BottlerRecipies.instance().bottlerList.keySet())
-                	{
-                		for (Item l : a)
-                		{
-                			if(itemstack.getItem() == l){
-                				return true;
-                			}
-                		}
-                	}
-                }
-				return false;
-        }
+
 
         @Override
         public void func_145839_a(NBTTagCompound tagCompound)
@@ -286,5 +270,22 @@ public class TileBottler extends TileEntity implements ISidedInventory
 		public boolean canExtractItem(int var1, ItemStack var2, int var3) {
 			return true;
 		}
+        @Override
+        public boolean isItemValidForSlot(int i, ItemStack itemstack)
+        {
+                if (i == 0 || i == 1)
+                {
+                	for (ArrayList<Item> a : BottlerRecipies.instance().bottlerList.keySet())
+                	{
+                		for (Item l : a)
+                		{
+                			if(itemstack.getItem() == l){
+                				return true;
+                			}
+                		}
+                	}
+                }
+				return false;
+        }
 
 }
