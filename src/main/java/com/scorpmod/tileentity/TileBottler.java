@@ -122,7 +122,7 @@ public class TileBottler extends TileEntity implements ISidedInventory
         {
                 if (i == 0 || i == 1)
                 {
-                	for (ArrayList<Item> a : BottlerRecipes.bottlerList)
+                	for (ArrayList<Item> a : BottlerRecipes.bottlerList.keySet())
                 	{
                 		for (Item i : a)
                 		{
