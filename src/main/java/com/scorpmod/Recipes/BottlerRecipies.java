@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 
 public class BottlerRecipies
 {
-        private Map<ArrayList<Item>, ItemStack> bottlerList = new HashMap<ArrayList<Item>, ItemStack>();
+        public Map<ArrayList<Item>, ItemStack> bottlerList = new HashMap<ArrayList<Item>, ItemStack>();
         private Map<Item, Float> bottlerExperience = new HashMap<Item, Float>();
         private static final BottlerRecipies bottlerBase = new BottlerRecipies();
 
