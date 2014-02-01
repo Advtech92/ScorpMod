@@ -127,11 +127,13 @@ public class TileBottler extends TileEntity implements ISidedInventory
                 	{
                 		for (Item l : a)
                 		{
-                			// TODO more things ;)
+                			if(itemstack.getItem() == l){
+                				return true;
+                			}
                 		}
                 	}
                 }
-                return true; // Temporary
+				return false;
         }
 
         @Override
