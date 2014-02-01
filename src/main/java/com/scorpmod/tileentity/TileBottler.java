@@ -120,7 +120,7 @@ public class TileBottler extends TileEntity implements ISidedInventory
         @Override
         public boolean isItemValidForSlot(int i, ItemStack itemstack)
         {
-                return false;
+                return i == 0 || i == 1 ;
         }
 
         @Override
@@ -262,7 +262,7 @@ public class TileBottler extends TileEntity implements ISidedInventory
 
 		@Override
 		public int[] getAccessibleSlotsFromSide(int var1) {
-			return new int[]{1,2};}
+			return new int[]{0,1};}
 
 		@Override
 		public boolean canInsertItem(int var1, ItemStack var2, int var3) {
