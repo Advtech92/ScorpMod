@@ -17,6 +17,7 @@ local.properties
 .loadpath
 eclipse/
 .gradle/
+run/
 forge-1.7.2-10.12.0.1012-changelog.txt
 CREDITS-fml.txt
 LICENSE-fml.txt
