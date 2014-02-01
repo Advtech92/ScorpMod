@@ -1,15 +1,16 @@
 package com.scorpmod.tileentity;
 
-import com.scorpmod.Recipes.BottlerRecipies;
+import java.util.ArrayList;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+
+import com.scorpmod.Recipes.BottlerRecipies;
 
 public class TileBottler extends TileEntity implements ISidedInventory 
 {
@@ -122,9 +123,9 @@ public class TileBottler extends TileEntity implements ISidedInventory
         {
                 if (i == 0 || i == 1)
                 {
-                	for (ArrayList<Item> a : BottlerRecipes.bottlerList.keySet())
+                	for (ArrayList<Item> a : BottlerRecipies.instance().bottlerList.keySet())
                 	{
-                		for (Item i : a)
+                		for (Item l : a)
                 		{
                 			// TODO more things ;)
                 		}
