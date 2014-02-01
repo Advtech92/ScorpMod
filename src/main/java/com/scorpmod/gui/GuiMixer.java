@@ -38,7 +38,7 @@ public class GuiMixer extends GuiContainer
         protected void func_146979_b(int par1, int par2)
         {
         	this.field_146289_q.drawString(StatCollector.translateToLocal("container.inventory"), 8, (field_147000_g - 96) + 2, 4210752);
-                this.field_146289_q.drawString("Liquid Mixer", 66, 6, 4210752);
+                this.field_146289_q.drawString("Infuser", 66, 6, 4210752);
         }
 
         /**

@@ -2,9 +2,9 @@
 tile.scorpBlock.name=Scorp Block
 tile.commanderadzBlock.name=CommanderAdz Block
 tile.handScanner.name=Hand Scanner
-tile.liquidmixer.name=Liquid Mixer
-tile.bottler.name=Liquid Bottler
-tile.washer.name=Liquid Washer
+tile.liquidmixer.name=Infuser
+tile.bottler.name=Decantery
+tile.washer.name=Distillery
 
 //itmes
 item.filter.name=Filter

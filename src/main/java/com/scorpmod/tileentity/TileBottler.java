@@ -4,13 +4,14 @@ import com.scorpmod.Recipes.BottlerRecipies;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileBottler extends TileEntity implements IInventory
+public class TileBottler extends TileEntity implements ISidedInventory 
 {
         private ItemStack[] inventory;
         public int pressTime = 0;
@@ -258,5 +259,19 @@ public class TileBottler extends TileEntity implements IInventory
         {
                 return this.abc * par1 / 50;
         }
+
+		@Override
+		public int[] getAccessibleSlotsFromSide(int var1) {
+			return new int[]{1,2};}
+
+		@Override
+		public boolean canInsertItem(int var1, ItemStack var2, int var3) {
+			return true;
+		}
+
+		@Override
+		public boolean canExtractItem(int var1, ItemStack var2, int var3) {
+			return true;
+		}
 
 }
