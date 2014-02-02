@@ -11,6 +11,8 @@ tile.washer.name=Distillery
 
 //itmes
 item.filter.name=Filter
+item.monsternugget.name=Monster Nugget
+item.monstermeat.name=Monster Meat
 
 //Buckets
 

@@ -28,6 +28,8 @@ import java.util.Arrays;
 
 
 
+
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -56,6 +58,8 @@ import com.scorpmod.items.ItemFluidFilter;
 import com.scorpmod.items.ItemGreenBottle;
 import com.scorpmod.items.ItemGreenBucket;
 import com.scorpmod.items.ItemGreenDirtyBottle;
+import com.scorpmod.items.ItemMonsterMeat;
+import com.scorpmod.items.ItemMonsterNugget;
 import com.scorpmod.items.ItemPurpleBottle;
 import com.scorpmod.items.ItemPurpleBucket;
 import com.scorpmod.items.ItemPurpleDirtyBottle;
@@ -113,6 +117,9 @@ public class ScorpMod
 	
 	public static Item itemfluidFilter;
 	public static Item itempurpleDust;
+	
+	public static Item itemmonsterNugget;
+	public static Item itemmonsterMeat;
 	
 	public static Item itemgreenBottle;
 	public static Item itempurpleBottle;
@@ -172,6 +179,9 @@ public class ScorpMod
 		itemfluidFilter = new ItemFluidFilter();
 		itempurpleDust = new ItemPurpleDust();
 		
+		itemmonsterNugget = new ItemMonsterNugget();
+		itemmonsterMeat = new ItemMonsterMeat();
+		
 		itemgreenBottle = new ItemGreenBottle();
 		itempurpleBottle = new ItemPurpleBottle();
 		itemredBottle = new ItemRedBottle();
@@ -207,6 +217,9 @@ public class ScorpMod
 		
 		registerItem(itemfluidFilter, "Filter");
 		registerItem(itempurpleDust, "Purple Dust");
+		
+		registerItem(itemmonsterNugget, "Monster Nugget");
+		registerItem(itemmonsterMeat, "Monster Meat");
 		
 		registerItem(itemgreenBottle, "Green Bottle");
 		registerItem(itempurpleBottle, "Purple Bottle");
@@ -346,6 +359,14 @@ public class ScorpMod
 			'r', Items.redstone,
 			'f', ScorpMod.itemfluidFilter,
 			'c', Items.clay_ball,
+		});
+		
+		GameRegistry.addRecipe(new ItemStack(ScorpMod.itemmonsterMeat),
+				new Object[]{
+			"nnn",
+			"nnn",
+			"nnn",
+			'n', ScorpMod.itemmonsterNugget,
 		});
 		ItemStack dyeStack = new ItemStack(Items.dye, 1, 5);
 		GameRegistry.addShapelessRecipe(new ItemStack(ScorpMod.itempurpleDust, 1),
