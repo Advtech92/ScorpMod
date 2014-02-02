@@ -26,6 +26,8 @@ import java.util.Arrays;
 
 
 
+
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -40,6 +42,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.scorpmod.blocks.BlockBottler;
 import com.scorpmod.blocks.BlockCommanderAdz;
+import com.scorpmod.blocks.BlockContainedSunspot;
+import com.scorpmod.blocks.BlockElipsicalLamp;
 import com.scorpmod.blocks.BlockHandScanner;
 import com.scorpmod.blocks.BlockMixer;
 import com.scorpmod.blocks.BlockScorp;
@@ -92,6 +96,9 @@ public class ScorpMod
 
 	public static Block scorpBlock;
 	public static Block blockcommanderAdz;
+	public static Block blockelipsicalLamp;
+	public static Block blockcontainedSunspot;
+	
 	public static Block blockhandScanner;
 	public static Block blockliquidMixer;
 	public static Block blockliquidWasher;
@@ -154,6 +161,9 @@ public class ScorpMod
         
         scorpBlock = new BlockScorp();
         blockcommanderAdz = new BlockCommanderAdz();
+        blockelipsicalLamp = new BlockElipsicalLamp();
+        blockcontainedSunspot = new BlockContainedSunspot();
+        
 		blockhandScanner = new BlockHandScanner();
 		blockliquidMixer = new BlockMixer();
 		blockliquidBottler = new BlockBottler();
@@ -187,6 +197,9 @@ public class ScorpMod
 
 		registerBlock(scorpBlock, "Scorp Block");
 		registerBlock(blockcommanderAdz, "CommanderAdz Block");
+		registerBlock(blockelipsicalLamp, "Elipsical Lamp");
+		registerBlock(blockcontainedSunspot, "Contained Sunspot");
+		
 		registerBlock(blockhandScanner, "Hand Scanner");
 		registerBlock(blockliquidMixer, "Mixer");
 		registerBlock(blockliquidBottler, "Bottler");

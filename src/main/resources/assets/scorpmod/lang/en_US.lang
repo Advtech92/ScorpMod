@@ -1,6 +1,9 @@
 //Blocks
 tile.scorpBlock.name=Scorp Block
 tile.commanderadzBlock.name=CommanderAdz Block
+tile.containedsunspotBlock.name=Contained Sunspot
+tile.elipsicallampBlock.name=Elipsical Lamp
+
 tile.handScanner.name=Hand Scanner
 tile.liquidmixer.name=Infuser
 tile.bottler.name=Decantery
