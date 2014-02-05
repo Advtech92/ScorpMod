@@ -16,17 +16,17 @@ import net.minecraft.world.World;
 public class BlockContainedSunspot extends Block{
 	
 	public BlockContainedSunspot(){
-		super(Material.field_151576_e);
-		func_149647_a(CreativeTabs.tabBlock);
-		func_149663_c("containedsunspotBlock");
-		func_149715_a(1);
+        super(Material.iron);
+        setBlockName("containedsunspotBlock");
+        setCreativeTab(CreativeTabs.tabBlock);
+		setLightLevel(1);
 	}
 	
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void func_149651_a(IIconRegister reg){
-		this.field_149761_L = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)));
+	public void registerBlockIcons(IIconRegister reg){
+		this.blockIcon = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)));
     }
     
 

@@ -87,13 +87,13 @@ public class TileMixer extends TileEntity implements ISidedInventory
         }
 
         @Override
-        public String func_145825_b()
+        public String getInventoryName()
         {
                 return "Coin Press";
         }
 
         @Override
-        public boolean func_145818_k_()
+        public boolean hasCustomInventoryName()
         {
                 return false;
         }
@@ -107,29 +107,29 @@ public class TileMixer extends TileEntity implements ISidedInventory
         @Override
         public boolean isUseableByPlayer(EntityPlayer entityplayer)
         {
-                return entityplayer.worldObj.func_147438_o(field_145851_c, field_145848_d, field_145849_e) == this && entityplayer.getDistanceSq(field_145851_c + 0.5, field_145848_d + 0.5, field_145849_e + 0.5) < 64;
+                return entityplayer.worldObj.getTileEntity(xCoord, yCoord, zCoord) == this && entityplayer.getDistanceSq(xCoord + 0.5, yCoord + 0.5, zCoord + 0.5) < 64;
         }
 
         @Override
-        public void openChest()
+        public void openInventory()
         {
         }
 
         @Override
-        public void closeChest()
+        public void closeInventory()
         {
         }
 
         @Override
-        public void func_145839_a(NBTTagCompound tagCompound)
+        public void readFromNBT(NBTTagCompound tagCompound)
         {
-                super.func_145839_a(tagCompound);
+                super.writeToNBT(tagCompound);
 
-                NBTTagList tagList = tagCompound.func_150295_c("Inventory", 10);
+                NBTTagList tagList = tagCompound.getTagList("Inventory", 10);
 
                 for (int i = 0; i < tagList.tagCount(); i++)
                 {
-                        NBTTagCompound tag = (NBTTagCompound) tagList.func_150305_b(i);
+                        NBTTagCompound tag = (NBTTagCompound) tagList.getCompoundTagAt(i);
 
                         byte slot = tag.getByte("Slot");
 
@@ -141,9 +141,9 @@ public class TileMixer extends TileEntity implements ISidedInventory
         }
 
         @Override
-        public void func_145841_b(NBTTagCompound tagCompound)
+        public void writeToNBT(NBTTagCompound tagCompound)
         {
-                super.func_145841_b(tagCompound);
+                super.writeToNBT(tagCompound);
 
                 NBTTagList itemList = new NBTTagList();
 
@@ -232,7 +232,7 @@ public class TileMixer extends TileEntity implements ISidedInventory
         }
 
         @Override
-        public void func_145845_h()
+        public void updateEntity()
         {
                 if (canPress() && abc == 0)
                         abc = 1;
@@ -249,7 +249,7 @@ public class TileMixer extends TileEntity implements ISidedInventory
                 {
                         abc++;
                 }
-                this.field_145850_b.func_147471_g(field_145851_c, field_145848_d, field_145849_e);
+                this.worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
         }
 
         public int getCookProgressScaled(int par1)

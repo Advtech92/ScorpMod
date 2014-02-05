@@ -16,9 +16,9 @@ import net.minecraft.world.World;
 public class BlockScorp extends Block{
 	
 	public BlockScorp(){
-		super(Material.field_151576_e);
-		func_149647_a(CreativeTabs.tabBlock);
-		func_149663_c("scorpBlock");
+        super(Material.iron);
+        setBlockName("scorpBlock");
+        setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -26,16 +26,16 @@ public class BlockScorp extends Block{
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void func_149651_a(IIconRegister reg){
-            this.side = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "front");
-            this.bottom = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "bottom");
-            this.top = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "top");
-            this.front = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "front");
+	public void registerBlockIcons(IIconRegister reg){
+            this.side = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "front");
+            this.bottom = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "bottom");
+            this.top = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "top");
+            this.front = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "front");
     }
     
     @SideOnly(Side.CLIENT)
     @Override
-    public IIcon func_149691_a(int side, int metadata){
+    public IIcon getIcon(int side, int metadata){
           if (side == 1) return this.top;
           else if (side == 0) return this.top;
           else if (metadata == 2 && side == 2) return this.front;
@@ -48,7 +48,7 @@ public class BlockScorp extends Block{
     }
     
     @Override
-	public void func_149689_a(World par1World, int x, int y, int z, EntityLivingBase par5EntityLivingBase, ItemStack par6ItemStack)
+	public void onBlockPlacedBy(World par1World, int x, int y, int z, EntityLivingBase par5EntityLivingBase, ItemStack par6ItemStack)
 {
     int whichDirectionFacing = MathHelper.floor_double(par5EntityLivingBase.rotationYaw * 4.0F / 360.0F + 2.5D) & 3;
     par1World.setBlockMetadataWithNotify(x, y, z, whichDirectionFacing, 2);

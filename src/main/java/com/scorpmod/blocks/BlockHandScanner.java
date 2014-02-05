@@ -28,10 +28,10 @@ public class BlockHandScanner extends BlockContainer{
         private String nbtname;
 
         public BlockHandScanner(){
-                super(Material.field_151576_e);
-                func_149663_c("handScanner");
-                func_149647_a(CreativeTabs.tabBlock);
-                func_149711_c(3);
+            super(Material.iron);
+            setBlockName("handScanner");
+            setCreativeTab(CreativeTabs.tabBlock);
+            setHardness(3);
         }
 
     	@SideOnly(Side.CLIENT)
@@ -39,16 +39,16 @@ public class BlockHandScanner extends BlockContainer{
     	
     	@Override
     	@SideOnly(Side.CLIENT)
-    	public void func_149651_a(IIconRegister reg){
-                this.side = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "sides");
-                this.bottom = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "top");
-                this.top = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "top");
-                this.front = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "front");
+    	public void registerBlockIcons(IIconRegister reg){
+                this.side = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "sides");
+                this.bottom = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "top");
+                this.top = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "top");
+                this.front = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "front");
         }
 
         @SideOnly(Side.CLIENT)
         @Override
-        public IIcon func_149691_a(int side, int metadata){
+        public IIcon getIcon(int side, int metadata){
               if (side == 1) return this.top;
               else if (side == 0) return this.top;
               else if (metadata == 2 && side == 2) return this.front;
@@ -59,19 +59,19 @@ public class BlockHandScanner extends BlockContainer{
         }
 
         @Override
-        public void func_149689_a(World world, int x, int y, int z, EntityLivingBase entity, ItemStack par6ItemStack) {
+        public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack par6ItemStack) {
                 
-        		world.func_147459_d(x, y, z, ScorpMod.blockhandScanner);
+        		world.setBlock(x, y, z, ScorpMod.blockhandScanner);
         		
                 int whichDirectionFacing = MathHelper.floor_double(entity.rotationYaw * 4.0F / 360.0F + 2.5D) & 3;
                 
                 world.setBlockMetadataWithNotify(x, y, z, whichDirectionFacing, 2);
                 
-                HandScannerTile tileEntity = (HandScannerTile) world.func_147438_o(x, y, z);
+                HandScannerTile tileEntity = (HandScannerTile) world.getTileEntity(x, y, z);
                 
                 EntityPlayer player = (EntityPlayer) entity;
                
-                if(!world.isRemote)player.func_146105_b(new ChatComponentText("Hand print set"));
+                if(!world.isRemote)player.addChatComponentMessage(new ChatComponentText("Hand print set"));
                 
                 if (entity instanceof EntityPlayer) {
                         name = player.getCommandSenderName();
@@ -81,10 +81,10 @@ public class BlockHandScanner extends BlockContainer{
         }
 
         @Override
-                public boolean func_149727_a(World par1World, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
+                public boolean onBlockActivated(World par1World, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
         {
-                HandScannerTile tileEntity = (HandScannerTile) par1World.func_147438_o(x, y, z);
-                par1World.func_147459_d(x, y, z, ScorpMod.blockhandScanner);
+                HandScannerTile tileEntity = (HandScannerTile) par1World.getTileEntity(x, y, z);
+                par1World.notifyBlockChange(x, y, z, ScorpMod.blockhandScanner);
                 nbtname = tileEntity.oName;
                 name = player.getCommandSenderName();
                 System.out.println("Right Click");
@@ -98,21 +98,21 @@ public class BlockHandScanner extends BlockContainer{
                                 if(status == 0){
                                         power = 15;
                                         status = 1;
-                                        par1World.func_147459_d(x, y, z, ScorpMod.blockhandScanner);
+                                        par1World.notifyBlockChange(x, y, z, ScorpMod.blockhandScanner);
                                 }else if(status == 1){
                                         power = 0;
                                         status = 0;
-                                        par1World.func_147459_d(x, y, z, ScorpMod.blockhandScanner);
+                                        par1World.notifyBlockChange(x, y, z, ScorpMod.blockhandScanner);
                                 }else{
                                 	System.out.println("Error");
                                 }
                                 return true;
                         }else if(!nbtname.equals(name)){
-                                player.func_146105_b(new ChatComponentText("Hand print not recognised"));
+                                player.addChatComponentMessage(new ChatComponentText("Hand print not recognised"));
                         }
                 }
                 else if(!par1World.isRemote && (!nbtname.equals(name))){
-                        player.func_146105_b(new ChatComponentText("Hand print not recognised"));
+                        player.addChatComponentMessage(new ChatComponentText("Hand print not recognised"));
                         return true;
                 }
                 return true;
@@ -120,19 +120,19 @@ public class BlockHandScanner extends BlockContainer{
         }
 
         @Override
-        public TileEntity func_149915_a(World world, int i){
+        public TileEntity createNewTileEntity(World world, int i){
                 HandScannerTile tile = new HandScannerTile();
                 return tile;
         }
 
         @Override
-                public boolean func_149744_f()
+                public boolean canProvidePower()
         {
                 return true;
         }
 
         @Override
-                public int func_149709_b(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
+                public int isProvidingWeakPower(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
         {
                 return power;
         }

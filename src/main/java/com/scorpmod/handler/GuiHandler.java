@@ -22,7 +22,7 @@ public class GuiHandler implements IGuiHandler{
         public Object getServerGuiElement(int ID, EntityPlayer player, World world,
                         int x, int y, int z) {
                 // TODO Auto-generated method stub
-                 TileEntity tile_entity = world.func_147438_o(x, y, z);
+                 TileEntity tile_entity = world.getTileEntity(x, y, z);
                   if(tile_entity != null)
                 {
                 switch(ID)
@@ -45,7 +45,7 @@ public class GuiHandler implements IGuiHandler{
         public Object getClientGuiElement(int ID, EntityPlayer player, World world,
                         int x, int y, int z) {
                 // TODO Auto-generated method stub
-                 TileEntity tile_entity = world.func_147438_o(x, y, z);
+                 TileEntity tile_entity = world.getTileEntity(x, y, z);
                   if(tile_entity != null)
                 {
                 switch(ID)

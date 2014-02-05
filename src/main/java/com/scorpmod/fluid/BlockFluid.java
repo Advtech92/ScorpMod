@@ -22,19 +22,19 @@ public class BlockFluid extends BlockFluidClassic{
 	
 	public BlockFluid(Fluid fluid, Material material) {
 		super(fluid, material);
-        func_149647_a(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
 	@Override
-	public IIcon func_149691_a(int side, int meta){
+	public IIcon getIcon(int side, int meta){
 		  return (side == 0 || side == 1)? stillIcon : flowingIcon;
 	}
 	
     @Override
     @SideOnly(Side.CLIENT)
-    public void func_149651_a(IIconRegister reg){
-        stillIcon = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)));
-        flowingIcon = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)));
+    public void registerBlockIcons(IIconRegister reg){
+        stillIcon = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)));
+        flowingIcon = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)));
     }
 	
 }

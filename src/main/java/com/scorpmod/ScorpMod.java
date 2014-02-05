@@ -258,12 +258,12 @@ public class ScorpMod
 		FluidRegistry.registerFluid(fluidTurquoise);
 		FluidRegistry.registerFluid(fluidYellow);
 		
-		blockwhiteFluid = new BlockFluid(fluidWhite, Material.field_151586_h).func_149663_c("fluidwhite").func_149658_d("scorpmod:fluidwhite");
-		blockgreenFluid = new BlockFluid(fluidGreen, Material.field_151586_h).func_149663_c("fluidgreen").func_149658_d("scorpmod:fluidgreen");
-		blockpurpleFluid = new BlockFluid(fluidPurple, Material.field_151586_h).func_149663_c("fluidpurple").func_149658_d("scorpmod:fluidpurple");
-		blockredFluid = new BlockFluid(fluidRed, Material.field_151586_h).func_149663_c("fluidred").func_149658_d("scorpmod:fluidred");
-		blockturquoiseFluid = new BlockFluid(fluidTurquoise, Material.field_151586_h).func_149663_c("fluidturquoise").func_149658_d("scorpmod:fluidturquoise");
-		blockyellowFluid = new BlockFluid(fluidYellow, Material.field_151586_h).func_149663_c("fluidyellow").func_149658_d("scorpmod:fluidyellow");
+		blockwhiteFluid = new BlockFluid(fluidWhite, Material.water).setBlockName("fluidwhite").setBlockTextureName("scorpmod:fluidwhite");
+		blockgreenFluid = new BlockFluid(fluidGreen, Material.water).setBlockName("fluidgreen").setBlockTextureName("scorpmod:fluidgreen");
+		blockpurpleFluid = new BlockFluid(fluidPurple, Material.water).setBlockName("fluidpurple").setBlockTextureName("scorpmod:fluidpurple");
+		blockredFluid = new BlockFluid(fluidRed, Material.water).setBlockName("fluidred").setBlockTextureName("scorpmod:fluidred");
+		blockturquoiseFluid = new BlockFluid(fluidTurquoise, Material.water).setBlockName("fluidturquoise").setBlockTextureName("scorpmod:fluidturquoise");
+		blockyellowFluid = new BlockFluid(fluidYellow, Material.water).setBlockName("fluidyellow").setBlockTextureName("scorpmod:fluidyellow");
 		
 		registerBlock(blockwhiteFluid, "whitefluidblock");
 		registerBlock(blockgreenFluid, "greenfluidblock");

@@ -21,26 +21,26 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockMixer extends BlockContainer{
 
         public BlockMixer(){
-            super(Material.field_151576_e);
-            func_149663_c("liquidmixer");
-            func_149647_a(CreativeTabs.tabBlock);
-            func_149711_c(3);
+            super(Material.iron);
+            setBlockName("liquidmixer");
+            setCreativeTab(CreativeTabs.tabBlock);
+            setHardness(3);
         }
         @SideOnly(Side.CLIENT)
         private IIcon side, bottom, top, front;
         
-        @Override
-        @SideOnly(Side.CLIENT)
-        public void func_149651_a(IIconRegister reg){
-            this.side = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "side");
-            this.bottom = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "top");
-            this.top = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "top");
-            this.front = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.func_149739_a().substring(5)) + "front");
+    	@Override
+    	@SideOnly(Side.CLIENT)
+    	public void registerBlockIcons(IIconRegister reg){
+                this.side = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "side");
+                this.bottom = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "top");
+                this.top = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "top");
+                this.front = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)) + "front");
         }
         
         @SideOnly(Side.CLIENT)
     @Override
-    public IIcon func_149691_a(int side, int metadata){
+    public IIcon getIcon(int side, int metadata){
               if (side == 1) return this.top;
               else if (side == 0) return this.top;
               else if (metadata == 2 && side == 2) return this.front;
@@ -53,20 +53,20 @@ public class BlockMixer extends BlockContainer{
         }
         
         @Override
-        public void func_149689_a(World par1World, int x, int y, int z, EntityLivingBase par5EntityLivingBase, ItemStack par6ItemStack)
+        public void onBlockPlacedBy(World par1World, int x, int y, int z, EntityLivingBase par5EntityLivingBase, ItemStack par6ItemStack)
     {
         int whichDirectionFacing = MathHelper.floor_double(par5EntityLivingBase.rotationYaw * 4.0F / 360.0F + 2.5D) & 3;
         par1World.setBlockMetadataWithNotify(x, y, z, whichDirectionFacing, 2);
     }
         
         @Override
-        public TileEntity func_149915_a(World world, int i) {
+        public TileEntity createNewTileEntity(World world, int i) {
                 return new TileMixer();
         }
     @Override
-    public boolean func_149727_a(World par1World, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
+    public boolean onBlockActivated(World par1World, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
     {
-         TileMixer tEntity = (TileMixer)par1World.func_147438_o(x,y,z);
+         TileMixer tEntity = (TileMixer)par1World.getTileEntity(x,y,z);
          if(tEntity != null){
                  player.openGui(ScorpMod.instance, 0, par1World, x, y, z);
  //        }
