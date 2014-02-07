@@ -198,7 +198,7 @@ public class ScorpMod
 		
 		itememptyBottle = new ItemEmptyBottle();
 		
-		itemgreenBucket = new ItemGreenBucket();
+		itemgreenBucket = new ItemGreenBucket(blockgreenFluid);
 		itempurpleBucket = new ItemPurpleBucket();
 		itemredBucket = new ItemRedBucket();
 		itemturquoiseBucket = new ItemTurquoiseBucket();

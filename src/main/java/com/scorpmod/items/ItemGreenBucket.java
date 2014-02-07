@@ -5,13 +5,15 @@ import com.scorpmod.libs.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBucket;
 
-public class ItemGreenBucket extends Item {
-    public ItemGreenBucket(){
-        super();
+public class ItemGreenBucket extends ItemBucket {
+    public ItemGreenBucket(Block lid){
+        super(lid);
         setUnlocalizedName("greenbucket");
         setCreativeTab(ScorpMod.tabscorpItems);
     }
