@@ -197,13 +197,6 @@ public class ScorpMod
 		itemyellowdirtyBottle = new ItemYellowDirtyBottle();
 		
 		itememptyBottle = new ItemEmptyBottle();
-		
-		itemgreenBucket = new ItemGreenBucket(blockgreenFluid);
-		itempurpleBucket = new ItemPurpleBucket();
-		itemredBucket = new ItemRedBucket();
-		itemturquoiseBucket = new ItemTurquoiseBucket();
-		itemwhiteBucket = new ItemWhiteBucket();
-		itemyellowBucket = new ItemYellowBucket();
 
 		registerBlock(scorpBlock, "Scorp Block");
 		registerBlock(blockcommanderAdz, "CommanderAdz Block");
@@ -237,12 +230,6 @@ public class ScorpMod
 		
 		registerItem(itememptyBottle, "Empty Bottle");
 		
-		registerItem(itemgreenBucket, "Green Bucket");
-		registerItem(itempurpleBucket, "Purple Bucket");
-		registerItem(itemredBucket, "Red Bucket");
-		registerItem(itemturquoiseBucket, "Turquoise Bucket");
-		registerItem(itemwhiteBucket, "White Bucket");
-		registerItem(itemyellowBucket, "Yellow Bucket");
 		
 		fluidWhite = new Fluid("white");
 		fluidGreen = new Fluid("green");
@@ -271,6 +258,20 @@ public class ScorpMod
 		registerBlock(blockredFluid, "redfluidblock");
 		registerBlock(blockturquoiseFluid, "turquoisefluidblock");
 		registerBlock(blockyellowFluid, "yellowfluidblock");
+		
+		itemgreenBucket = new ItemGreenBucket(blockgreenFluid);
+		itempurpleBucket = new ItemPurpleBucket(blockpurpleFluid);
+		itemredBucket = new ItemRedBucket(blockredFluid);
+		itemturquoiseBucket = new ItemTurquoiseBucket(blockturquoiseFluid);
+		itemwhiteBucket = new ItemWhiteBucket(blockwhiteFluid);
+		itemyellowBucket = new ItemYellowBucket(blockyellowFluid);
+		
+		registerItem(itemgreenBucket, "Green Bucket");
+		registerItem(itempurpleBucket, "Purple Bucket");
+		registerItem(itemredBucket, "Red Bucket");
+		registerItem(itemturquoiseBucket, "Turquoise Bucket");
+		registerItem(itemwhiteBucket, "White Bucket");
+		registerItem(itemyellowBucket, "Yellow Bucket");
 		
         BucketHandler.INSTANCE.buckets.put(blockwhiteFluid, itemwhiteBucket);
         BucketHandler.INSTANCE.buckets.put(blockgreenFluid, itemgreenBucket);
