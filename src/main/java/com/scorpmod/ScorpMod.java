@@ -30,6 +30,8 @@ import java.util.Arrays;
 
 
 
+
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -47,6 +49,7 @@ import com.scorpmod.blocks.BlockCommanderAdz;
 import com.scorpmod.blocks.BlockContainedSunspot;
 import com.scorpmod.blocks.BlockElipsicalLamp;
 import com.scorpmod.blocks.BlockHandScanner;
+import com.scorpmod.blocks.BlockMeatPurifier;
 import com.scorpmod.blocks.BlockMixer;
 import com.scorpmod.blocks.BlockScorp;
 import com.scorpmod.blocks.BlockWasher;
@@ -78,6 +81,7 @@ import com.scorpmod.items.ItemYellowBucket;
 import com.scorpmod.items.ItemYellowDirtyBottle;
 import com.scorpmod.libs.Reference;
 import com.scorpmod.tileentity.HandScannerTile;
+import com.scorpmod.tileentity.TileMeatPurifier;
 import com.scorpmod.tileentity.TileMixer;
 import com.scorpmod.tileentity.TileWasher;
 
@@ -107,6 +111,7 @@ public class ScorpMod
 	public static Block blockliquidMixer;
 	public static Block blockliquidWasher;
 	public static Block blockliquidBottler;
+	public static Block blockmeatPurifier;
 	
 	public static Block blockwhiteFluid;
 	public static Block blockgreenFluid;
@@ -175,6 +180,7 @@ public class ScorpMod
 		blockliquidMixer = new BlockMixer();
 		blockliquidBottler = new BlockBottler();
 		blockliquidWasher = new BlockWasher();
+		blockmeatPurifier = new BlockMeatPurifier();
 		
 		itemfluidFilter = new ItemFluidFilter();
 		itempurpleDust = new ItemPurpleDust();
@@ -207,6 +213,7 @@ public class ScorpMod
 		registerBlock(blockliquidMixer, "Mixer");
 		registerBlock(blockliquidBottler, "Bottler");
 		registerBlock(blockliquidWasher, "Washer");
+		registerBlock(blockmeatPurifier, "MeatPurifier");
 		
 		registerItem(itemfluidFilter, "Filter");
 		registerItem(itempurpleDust, "Purple Dust");
@@ -292,6 +299,7 @@ public class ScorpMod
 		GameRegistry.registerTileEntity(TileMixer.class, "MixerTile");
 		GameRegistry.registerTileEntity(TileMixer.class, "BottlerTile");
 		GameRegistry.registerTileEntity(TileWasher.class, "WasherTile");
+		GameRegistry.registerTileEntity(TileMeatPurifier.class,"MetPurifierTile");
 		
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("white", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemwhiteBucket), new ItemStack(Items.bucket));
         FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("green", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemgreenBucket), new ItemStack(Items.bucket));
