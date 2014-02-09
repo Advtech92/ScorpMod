@@ -34,7 +34,6 @@ public class ContainerMeatPurifier extends Container
                 this.tile_entity = tile_entity;
 
                 addSlotToContainer(new Slot(tile_entity, 0, 44, 15));
-                addSlotToContainer(new Slot(tile_entity, 1, 44, 55));
                 addSlotToContainer(new SlotBottler(tile_entity, 2, 130, 35));
 
                 bindPlayerInventory(player_inventory);
