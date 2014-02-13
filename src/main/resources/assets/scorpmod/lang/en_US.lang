@@ -8,11 +8,13 @@ tile.handScanner.name=Hand Scanner
 tile.liquidmixer.name=Infuser
 tile.bottler.name=Decantery
 tile.washer.name=Distillery
+tile.meatgrinder.name=Meat Grinder
 
 //itmes
 item.filter.name=Filter
 item.monsternugget.name=Monster Nugget
 item.monstermeat.name=Monster Meat
+item.grinder.name=Grinder Head
 
 //Buckets
 
@@ -51,3 +53,4 @@ tile.fluidyellow.name=Yellow Liquid
 item.purpledust.name=Purple Dust
 
 itemGroup.tabscorpItems=ScorpMod Items
+itemGroup.tabscorpBlocks=ScorpMod Blocks
