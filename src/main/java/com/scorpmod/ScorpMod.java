@@ -2,36 +2,6 @@ package com.scorpmod;
 
 import java.util.Arrays;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -39,6 +9,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
@@ -56,29 +27,19 @@ import com.scorpmod.blocks.BlockWasher;
 import com.scorpmod.fluid.BlockFluid;
 import com.scorpmod.handler.BucketHandler;
 import com.scorpmod.handler.GuiHandler;
+import com.scorpmod.items.ItemDrink;
+import com.scorpmod.items.ItemDrinkDirty;
 import com.scorpmod.items.ItemEmptyBottle;
 import com.scorpmod.items.ItemFluidFilter;
-import com.scorpmod.items.ItemGreenBottle;
 import com.scorpmod.items.ItemGreenBucket;
-import com.scorpmod.items.ItemGreenDirtyBottle;
 import com.scorpmod.items.ItemMonsterMeat;
 import com.scorpmod.items.ItemMonsterNugget;
-import com.scorpmod.items.ItemPurpleBottle;
 import com.scorpmod.items.ItemPurpleBucket;
-import com.scorpmod.items.ItemPurpleDirtyBottle;
 import com.scorpmod.items.ItemPurpleDust;
-import com.scorpmod.items.ItemRedBottle;
 import com.scorpmod.items.ItemRedBucket;
-import com.scorpmod.items.ItemRedDirtyBottle;
-import com.scorpmod.items.ItemTurquoiseBottle;
 import com.scorpmod.items.ItemTurquoiseBucket;
-import com.scorpmod.items.ItemTurquoiseDirtyBottle;
-import com.scorpmod.items.ItemWhiteBottle;
 import com.scorpmod.items.ItemWhiteBucket;
-import com.scorpmod.items.ItemWhiteDirtyBottle;
-import com.scorpmod.items.ItemYellowBottle;
 import com.scorpmod.items.ItemYellowBucket;
-import com.scorpmod.items.ItemYellowDirtyBottle;
 import com.scorpmod.libs.Reference;
 import com.scorpmod.tileentity.HandScannerTile;
 import com.scorpmod.tileentity.TileMeatPurifier;
@@ -187,20 +148,21 @@ public class ScorpMod
 		
 		itemmonsterNugget = new ItemMonsterNugget();
 		itemmonsterMeat = new ItemMonsterMeat();
+
+		ItemDrink drink = new ItemDrink();
+		itemgreenBottle = new ItemDrink("greenbottle", drink.new potionType(Potion.heal.id, 1, 2), drink.new potionType(Potion.resistance.id, 3600, 2), drink.new potionType(Potion.regeneration.id, 3600, 2), drink.new potionType(Potion.field_76443_y.id, 200, 2));
+		itempurpleBottle = new ItemDrink("purplebottle", drink.new potionType(Potion.moveSpeed.id, 1200, 1), drink.new potionType(Potion.jump.id, 1200, 1), drink.new potionType(Potion.damageBoost.id, 1200, 1));
+		itemredBottle = new ItemDrink("redbottle", drink.new potionType(Potion.nightVision.id, 3600, 1));
+		itemturquoiseBottle = new ItemDrink("turquoisebottle", drink.new potionType(Potion.digSpeed.id, 6000, 1), drink.new potionType(Potion.nightVision.id, 6000, 1));
+		itemwhiteBottle = new ItemDrink("whitebottle", drink.new potionType(Potion.moveSpeed.id, 1200, 2));
+		itemyellowBottle = new ItemDrink("yellowbottle", drink.new potionType(Potion.heal.id, 20, 5), drink.new potionType(Potion.field_76443_y.id, 20, 5));
 		
-		itemgreenBottle = new ItemGreenBottle();
-		itempurpleBottle = new ItemPurpleBottle();
-		itemredBottle = new ItemRedBottle();
-		itemturquoiseBottle = new ItemTurquoiseBottle();
-		itemwhiteBottle = new ItemWhiteBottle();
-		itemyellowBottle = new ItemYellowBottle();
-		
-		itemgreendirtyBottle = new ItemGreenDirtyBottle();
-		itempurpledirtyBottle = new ItemPurpleDirtyBottle();
-		itemreddirtyBottle = new ItemRedDirtyBottle();
-		itemturquoisedirtyBottle = new ItemTurquoiseDirtyBottle();
-		itemwhitedirtyBottle = new ItemWhiteDirtyBottle();
-		itemyellowdirtyBottle = new ItemYellowDirtyBottle();
+		itemgreendirtyBottle = new ItemDrinkDirty("greendirtybottle");
+		itempurpledirtyBottle = new ItemDrinkDirty("purpledirtybottle");
+		itemreddirtyBottle = new ItemDrinkDirty("reddirtybottle");
+		itemturquoisedirtyBottle = new ItemDrinkDirty("turquoisedirtybottle");
+		itemwhitedirtyBottle = new ItemDrinkDirty("whitedirtybottle");
+		itemyellowdirtyBottle = new ItemDrinkDirty("yellowdirtybottle");
 		
 		itememptyBottle = new ItemEmptyBottle();
 
