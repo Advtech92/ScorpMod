@@ -12,13 +12,13 @@ import net.minecraft.item.ItemStack;
 
 public class MeatPurifierRecipies
 {
-        public Map<ArrayList<Item>, ItemStack> bottlerList = new HashMap<ArrayList<Item>, ItemStack>();
-        private Map<Item, Float> bottlerExperience = new HashMap<Item, Float>();
-        private static final MeatPurifierRecipies bottlerBase = new MeatPurifierRecipies();
+        private Map<ArrayList<Item>, ItemStack> mixerList = new HashMap<ArrayList<Item>, ItemStack>();
+        private Map<Item, Float> mixerExperience = new HashMap<Item, Float>();
+        private static final MeatPurifierRecipies mixerBase = new MeatPurifierRecipies();
 
         public static final MeatPurifierRecipies instance()
         {
-                return bottlerBase;
+                return mixerBase;
         }
 
         public ItemStack getRecipeResult(Item item, Item item2)
@@ -31,7 +31,7 @@ public class MeatPurifierRecipies
                 array2.add(item2);
                 array2.add(item);
                 
-                return bottlerList.get(array1) == null ? bottlerList.get(array2) : bottlerList.get(array1);
+                return mixerList.get(array1) == null ? mixerList.get(array2) : mixerList.get(array1);
         }
 
         public void addMixerRecipe(Item item1, Item item2, ItemStack itemStack, float experience)
@@ -40,18 +40,18 @@ public class MeatPurifierRecipies
                 array.add(item1);
                 array.add(item2);
                 
-                bottlerList.put(array, itemStack);
-                this.bottlerExperience.put(itemStack.getItem(), Float.valueOf(experience));
+                mixerList.put(array, itemStack);
+                this.mixerExperience.put(itemStack.getItem(), Float.valueOf(experience));
         }
 
         public float getExperience(int par1)
         {
-                return this.bottlerExperience.containsKey(Integer.valueOf(par1)) ? this.bottlerExperience.get(Integer.valueOf(par1)).floatValue() : 0.0F;
+                return this.mixerExperience.containsKey(Integer.valueOf(par1)) ? this.mixerExperience.get(Integer.valueOf(par1)).floatValue() : 0.0F;
         }
 
         private MeatPurifierRecipies()
         {
-                addMixerRecipe(ScorpMod.itememptyBottle, ScorpMod.itemwhiteBucket, new ItemStack(ScorpMod.itemwhitedirtyBottle, 1, 0), 0.7F);
+                addMixerRecipe(Items.rotten_flesh, ScorpMod.itemGrinder, new ItemStack(ScorpMod.itemmonsterNugget, 1, 0), 0.7F);
                 
         }
 }

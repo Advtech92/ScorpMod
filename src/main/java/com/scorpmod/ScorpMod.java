@@ -32,6 +32,7 @@ import com.scorpmod.items.ItemDrinkDirty;
 import com.scorpmod.items.ItemEmptyBottle;
 import com.scorpmod.items.ItemFluidFilter;
 import com.scorpmod.items.ItemGreenBucket;
+import com.scorpmod.items.ItemGrinder;
 import com.scorpmod.items.ItemMonsterMeat;
 import com.scorpmod.items.ItemMonsterNugget;
 import com.scorpmod.items.ItemPurpleBucket;
@@ -86,6 +87,7 @@ public class ScorpMod
 	
 	public static Item itemmonsterNugget;
 	public static Item itemmonsterMeat;
+	public static Item itemGrinder;
 	
 	public static Item itemgreenBottle;
 	public static Item itempurpleBottle;
@@ -148,6 +150,7 @@ public class ScorpMod
 		
 		itemmonsterNugget = new ItemMonsterNugget();
 		itemmonsterMeat = new ItemMonsterMeat();
+		itemGrinder = new ItemGrinder();
 
 		ItemDrink drink = new ItemDrink();
 		itemgreenBottle = new ItemDrink("greenbottle", drink.new potionType(Potion.heal.id, 1, 2), drink.new potionType(Potion.resistance.id, 3600, 2), drink.new potionType(Potion.regeneration.id, 3600, 2), drink.new potionType(Potion.field_76443_y.id, 200, 2));
@@ -182,6 +185,7 @@ public class ScorpMod
 		
 		registerItem(itemmonsterNugget, "Monster Nugget");
 		registerItem(itemmonsterMeat, "Monster Meat");
+		registerItem(itemGrinder, "Grinder");
 		
 		registerItem(itemgreenBottle, "Green Bottle");
 		registerItem(itempurpleBottle, "Purple Bottle");
@@ -261,7 +265,7 @@ public class ScorpMod
 		GameRegistry.registerTileEntity(TileMixer.class, "MixerTile");
 		GameRegistry.registerTileEntity(TileMixer.class, "BottlerTile");
 		GameRegistry.registerTileEntity(TileWasher.class, "WasherTile");
-		GameRegistry.registerTileEntity(TileMeatPurifier.class,"MetPurifierTile");
+		GameRegistry.registerTileEntity(TileMeatPurifier.class,"MeatPurifierTile");
 		
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("white", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemwhiteBucket), new ItemStack(Items.bucket));
         FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("green", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemgreenBucket), new ItemStack(Items.bucket));

@@ -8,7 +8,7 @@ tile.handScanner.name=Hand Scanner
 tile.liquidmixer.name=Infuser
 tile.bottler.name=Decantery
 tile.washer.name=Distillery
-tile.meatgrinder.name=Meat Grinder
+tile.meatpurifier.name=Meat Grinder
 
 //itmes
 item.filter.name=Filter

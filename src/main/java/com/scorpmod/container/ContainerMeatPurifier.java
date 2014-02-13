@@ -1,6 +1,5 @@
 package com.scorpmod.container;
 
-import com.scorpmod.tileentity.TileBottler;
 import com.scorpmod.tileentity.TileMeatPurifier;
 import com.scorpmod.tileentity.TileMixer;
 
@@ -13,9 +12,9 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerMeatPurifier extends Container
 {
-        private class SlotBottler extends Slot
+        private class SlotMeatPurifier extends Slot
         {
-                public SlotBottler(IInventory par1iInventory, int par2, int par3, int par4)
+                public SlotMeatPurifier(IInventory par1iInventory, int par2, int par3, int par4)
                 {
                         super(par1iInventory, par2, par3, par4);
                 }
@@ -34,7 +33,8 @@ public class ContainerMeatPurifier extends Container
                 this.tile_entity = tile_entity;
 
                 addSlotToContainer(new Slot(tile_entity, 0, 44, 15));
-                addSlotToContainer(new SlotBottler(tile_entity, 2, 130, 35));
+                addSlotToContainer(new Slot(tile_entity, 1, 44, 55));
+                addSlotToContainer(new SlotMeatPurifier(tile_entity, 2, 130, 35));
 
                 bindPlayerInventory(player_inventory);
         }

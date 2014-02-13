@@ -2,7 +2,12 @@ package com.scorpmod.tileentity;
 
 import java.util.ArrayList;
 
+import com.scorpmod.Recipes.BottlerRecipies;
+import com.scorpmod.Recipes.MeatPurifierRecipies;
+import com.scorpmod.Recipes.MixerRecipies;
+
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,10 +15,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
-import com.scorpmod.Recipes.BottlerRecipies;
-import com.scorpmod.Recipes.MeatPurifierRecipies;
-
-public class TileMeatPurifier extends TileEntity implements ISidedInventory 
+public class TileMeatPurifier extends TileEntity implements ISidedInventory
 {
         private ItemStack[] inventory;
         public int pressTime = 0;
@@ -119,12 +121,10 @@ public class TileMeatPurifier extends TileEntity implements ISidedInventory
         {
         }
 
-
-
         @Override
         public void readFromNBT(NBTTagCompound tagCompound)
         {
-                super.readFromNBT(tagCompound);
+                super.writeToNBT(tagCompound);
 
                 NBTTagList tagList = tagCompound.getTagList("Inventory", 10);
 
@@ -276,7 +276,7 @@ public class TileMeatPurifier extends TileEntity implements ISidedInventory
         {
                 if (i == 0 || i == 1)
                 {
-                	for (ArrayList<Item> a : MeatPurifierRecipies.instance().bottlerList.keySet())
+                	for (ArrayList<Item> a : BottlerRecipies.instance().bottlerList.keySet())
                 	{
                 		for (Item l : a)
                 		{
