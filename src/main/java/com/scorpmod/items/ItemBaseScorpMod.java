@@ -10,12 +10,20 @@ import net.minecraft.item.Item;
 
 public class ItemBaseScorpMod extends Item
 {
-	public ItemBaseScorpMod(String unlocName, int stackSize)
+	public ItemBaseScorpMod(String unlocName, int stackSize, boolean isDamageable, int maxDamage)
 	{
 		super();
 		setUnlocalizedName(unlocName);
 		setCreativeTab(ScorpMod.tabscorpItems);
 		maxStackSize = stackSize;
+		
+		if (isDamageable)
+			setMaxDamage(maxDamage);
+	}
+	
+	public ItemBaseScorpMod(String unlocName, int stackSize)
+	{
+		this(unlocName, 64, false, 0);
 	}
 
 	public ItemBaseScorpMod(String unlocName)

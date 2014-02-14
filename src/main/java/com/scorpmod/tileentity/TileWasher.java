@@ -2,19 +2,18 @@ package com.scorpmod.tileentity;
 
 import java.util.ArrayList;
 
-import com.scorpmod.ScorpMod;
-import com.scorpmod.Recipes.BottlerRecipies;
-import com.scorpmod.Recipes.WasherRecipies;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
 
-public class TileWasher extends TileEntity implements ISidedInventory
+import com.scorpmod.ScorpMod;
+import com.scorpmod.Recipes.BottlerRecipies;
+import com.scorpmod.Recipes.WasherRecipies;
+
+public class TileWasher extends TileBaseScorpMod implements ISidedInventory
 {
 	private ItemStack[] inventory;
 	public int pressTime = 0;
@@ -23,18 +22,6 @@ public class TileWasher extends TileEntity implements ISidedInventory
 	public TileWasher()
 	{
 		this.inventory = new ItemStack[3];
-	}
-
-	@Override
-	public int getSizeInventory()
-	{
-		return this.inventory.length;
-	}
-
-	@Override
-	public ItemStack getStackInSlot(int i)
-	{
-		return this.inventory[i];
 	}
 
 	@Override
@@ -156,7 +143,7 @@ public class TileWasher extends TileEntity implements ISidedInventory
 			{
 				this.inventory[2] = var1.copy();
 			}
-			else if (this.inventory[2] == var1)
+			else if (this.inventory[2].getItem() == var1.getItem())
 			{
 				++this.inventory[2].stackSize;
 			}

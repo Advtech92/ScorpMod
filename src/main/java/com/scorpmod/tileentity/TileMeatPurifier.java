@@ -2,37 +2,25 @@ package com.scorpmod.tileentity;
 
 import java.util.ArrayList;
 
-import com.scorpmod.Recipes.BottlerRecipies;
-import com.scorpmod.Recipes.MeatPurifierRecipies;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
 
-public class TileMeatPurifier extends TileEntity implements ISidedInventory
+import com.scorpmod.ScorpMod;
+import com.scorpmod.Recipes.BottlerRecipies;
+import com.scorpmod.Recipes.MeatPurifierRecipies;
+
+public class TileMeatPurifier extends TileBaseScorpMod implements ISidedInventory
 {
-	private ItemStack[] inventory;
 	public int pressTime = 0;
 	public int abc = 1;
 
 	public TileMeatPurifier()
 	{
 		this.inventory = new ItemStack[3];
-	}
-
-	@Override
-	public int getSizeInventory()
-	{
-		return this.inventory.length;
-	}
-
-	@Override
-	public ItemStack getStackInSlot(int i)
-	{
-		return this.inventory[i];
 	}
 
 	@Override
@@ -144,24 +132,35 @@ public class TileMeatPurifier extends TileEntity implements ISidedInventory
 		}
 		tagCompound.setTag("Inventory", itemList);
 	}
+	
+	public int getFilterSlot()
+	{
+		return inventory[0].getItem() == ScorpMod.itemGrinder ? 0 : 1;
+	}
+	
+	public int getNotFilterSlot()
+	{
+		return getFilterSlot() == 0 ? 1 : 0;
+	}
 
 	public void pressItem()
 	{
 		if (this.inventory[0] != null && this.inventory[1] != null)
 		{
-			ItemStack var1 = MeatPurifierRecipies.instance().getRecipeResult(this.inventory[0].getItem(), this.inventory[1].getItem());
+			ItemStack var1 = new ItemStack(ScorpMod.itemmonsterNugget);
 			if (this.inventory[2] == null)
 			{
 				this.inventory[2] = var1.copy();
 			}
-			else if (this.inventory[2] == var1)
+			else if (this.inventory[2].getItem() == var1.getItem())
 			{
 				++this.inventory[2].stackSize;
 			}
 			this.inventory[0].getItem().setContainerItem(null);
 			this.inventory[1].getItem().setContainerItem(null);
-			this.inventory[0].stackSize--;
-			this.inventory[1].stackSize--;
+			this.inventory[getFilterSlot()].setItemDamage(inventory[getFilterSlot()].getItemDamage() + 1);
+			this.inventory[getNotFilterSlot()].stackSize--;
+			if (inventory[getFilterSlot()].getItemDamage() >= 10) inventory[getFilterSlot()].stackSize--;
 			if (this.inventory[0].stackSize == 0)
 			{
 				Item var2 = this.inventory[0].getItem().getContainerItem();

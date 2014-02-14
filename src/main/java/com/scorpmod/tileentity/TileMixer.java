@@ -2,18 +2,17 @@ package com.scorpmod.tileentity;
 
 import java.util.ArrayList;
 
-import com.scorpmod.Recipes.BottlerRecipies;
-import com.scorpmod.Recipes.MixerRecipies;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
 
-public class TileMixer extends TileEntity implements ISidedInventory
+import com.scorpmod.Recipes.BottlerRecipies;
+import com.scorpmod.Recipes.MixerRecipies;
+
+public class TileMixer extends TileBaseScorpMod implements ISidedInventory
 {
 	private ItemStack[] inventory;
 	public int pressTime = 0;
@@ -22,18 +21,6 @@ public class TileMixer extends TileEntity implements ISidedInventory
 	public TileMixer()
 	{
 		this.inventory = new ItemStack[3];
-	}
-
-	@Override
-	public int getSizeInventory()
-	{
-		return this.inventory.length;
-	}
-
-	@Override
-	public ItemStack getStackInSlot(int i)
-	{
-		return this.inventory[i];
 	}
 
 	@Override

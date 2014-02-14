@@ -8,31 +8,17 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
 
 import com.scorpmod.Recipes.BottlerRecipies;
 
-public class TileBottler extends TileEntity implements ISidedInventory
+public class TileBottler extends TileBaseScorpMod implements ISidedInventory
 {
-	private ItemStack[] inventory;
 	public int pressTime = 0;
 	public int abc = 1;
 
 	public TileBottler()
 	{
 		this.inventory = new ItemStack[3];
-	}
-
-	@Override
-	public int getSizeInventory()
-	{
-		return this.inventory.length;
-	}
-
-	@Override
-	public ItemStack getStackInSlot(int i)
-	{
-		return this.inventory[i];
 	}
 
 	@Override

@@ -1,9 +1,8 @@
 package com.scorpmod.tileentity;
 
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
 
-public class HandScannerTile extends TileEntity
+public class HandScannerTile extends TileBaseScorpMod
 {
 	public String oName;
 
