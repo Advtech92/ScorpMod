@@ -15,8 +15,6 @@ import com.scorpmod.tileentity.HandScannerTile;
 public class BlockHandScanner extends BlockContainerBaseScorpMod<HandScannerTile>
 {
 	private String name;
-	public int power;
-	public int status;
 	private String nbtname;
 
 	public BlockHandScanner()
@@ -56,16 +54,16 @@ public class BlockHandScanner extends BlockContainerBaseScorpMod<HandScannerTile
 		{
 			if (nbtname.equals(name))
 			{
-				if (status == 0)
+				if (tileEntity.status == 0)
 				{
-					power = 15;
-					status = 1;
+					tileEntity.power = 15;
+					tileEntity.status = 1;
 					par1World.notifyBlockChange(x, y, z, ScorpMod.blockhandScanner);
 				}
-				else if (status == 1)
+				else if (tileEntity.status == 1)
 				{
-					power = 0;
-					status = 0;
+					tileEntity.power = 0;
+					tileEntity.status = 0;
 					par1World.notifyBlockChange(x, y, z, ScorpMod.blockhandScanner);
 				}
 				else
@@ -94,8 +92,9 @@ public class BlockHandScanner extends BlockContainerBaseScorpMod<HandScannerTile
 	}
 
 	@Override
-	public int isProvidingWeakPower(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
+	public int isProvidingWeakPower(IBlockAccess par1IBlockAccess, int x, int y, int z, int par5)
 	{
-		return power;
+		HandScannerTile tileentity = (HandScannerTile) par1IBlockAccess.getTileEntity(x, y, z);
+		return tileentity.power;
 	}
 }

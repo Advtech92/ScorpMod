@@ -131,7 +131,7 @@ public class ScorpMod
 		itempurpleDust = new ItemBaseScorpMod("purpledust");
 		itemmonsterNugget = new ItemBaseScorpMod("monsternugget");
 		itemmonsterMeat = new ItemMonsterMeat();
-		itemGrinder = new ItemBaseScorpMod("grinder", 1, true, 30);
+		itemGrinder = new ItemBaseScorpMod("grinder", 1, true, 32);
 		
 		ItemDrink drink = new ItemDrink();
 		itemgreenBottle = new ItemDrink("greenbottle", drink.new potionType(Potion.heal.id, 1, 2), drink.new potionType(Potion.resistance.id, 3600, 2), drink.new potionType(Potion.regeneration.id, 3600, 2), drink.new potionType(Potion.field_76443_y.id, 200, 2));
