@@ -21,6 +21,9 @@ public class HandScannerTile extends TileBaseScorpMod
 	public void readFromNBT(NBTTagCompound nbt)
 	{
 		super.readFromNBT(nbt);
+		nbt.getString("oName");
+		nbt.getString("power");
+		nbt.getString("status");
 		System.out.println(oName);
 	}
 }
