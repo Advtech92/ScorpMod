@@ -9,12 +9,12 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemBucket;
 
-public class ItemRedBucket extends ItemBucket
+public class ItemBucketScorpMod extends ItemBucket
 {
-	public ItemRedBucket(Block lid)
+	public ItemBucketScorpMod(Block lid, String unlocName)
 	{
 		super(lid);
-		setUnlocalizedName("redbucket");
+		setUnlocalizedName(unlocName);
 		setCreativeTab(ScorpMod.tabscorpItems);
 	}
 

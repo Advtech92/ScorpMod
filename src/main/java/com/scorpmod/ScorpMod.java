@@ -25,15 +25,10 @@ import com.scorpmod.fluid.BlockFluid;
 import com.scorpmod.handler.BucketHandler;
 import com.scorpmod.handler.GuiHandler;
 import com.scorpmod.items.ItemBaseScorpMod;
+import com.scorpmod.items.ItemBucketScorpMod;
 import com.scorpmod.items.ItemDrink;
 import com.scorpmod.items.ItemDrinkDirty;
-import com.scorpmod.items.ItemGreenBucket;
 import com.scorpmod.items.ItemMonsterMeat;
-import com.scorpmod.items.ItemPurpleBucket;
-import com.scorpmod.items.ItemRedBucket;
-import com.scorpmod.items.ItemTurquoiseBucket;
-import com.scorpmod.items.ItemWhiteBucket;
-import com.scorpmod.items.ItemYellowBucket;
 import com.scorpmod.libs.Reference;
 import com.scorpmod.tileentity.HandScannerTile;
 import com.scorpmod.tileentity.TileBottler;
@@ -210,12 +205,12 @@ public class ScorpMod
 		registerBlock(blockturquoiseFluid, "turquoisefluidblock");
 		registerBlock(blockyellowFluid, "yellowfluidblock");
 		
-		itemgreenBucket = new ItemGreenBucket(blockgreenFluid);
-		itempurpleBucket = new ItemPurpleBucket(blockpurpleFluid);
-		itemredBucket = new ItemRedBucket(blockredFluid);
-		itemturquoiseBucket = new ItemTurquoiseBucket(blockturquoiseFluid);
-		itemwhiteBucket = new ItemWhiteBucket(blockwhiteFluid);
-		itemyellowBucket = new ItemYellowBucket(blockyellowFluid);
+		itemgreenBucket = new ItemBucketScorpMod(blockgreenFluid, "greenbucket");
+		itempurpleBucket = new ItemBucketScorpMod(blockpurpleFluid, "purplebucket");
+		itemredBucket = new ItemBucketScorpMod(blockredFluid, "redbucket");
+		itemturquoiseBucket = new ItemBucketScorpMod(blockturquoiseFluid, "turquoisebucket");
+		itemwhiteBucket = new ItemBucketScorpMod(blockwhiteFluid, "whitebucket");
+		itemyellowBucket = new ItemBucketScorpMod(blockyellowFluid, "yellowbucket");
 		
 		registerItem(itemgreenBucket, "Green Bucket");
 		registerItem(itempurpleBucket, "Purple Bucket");

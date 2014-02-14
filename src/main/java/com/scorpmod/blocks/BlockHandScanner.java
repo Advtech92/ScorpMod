@@ -52,8 +52,6 @@ public class BlockHandScanner extends BlockContainerBaseScorpMod<HandScannerTile
 		System.out.println(name);
 		System.out.println(nbtname);
 		// This is never called when the world is restarted
-		// l
-		// V
 		if (!par1World.isRemote)
 		{
 			if (nbtname.equals(name))
