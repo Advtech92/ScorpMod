@@ -29,6 +29,5 @@ public class HandScannerTile extends TileBaseScorpMod
 		oName = nbt.getString("oName");
 		power = nbt.getInteger("power");
 		status = nbt.getInteger("status");
-		System.out.println(oName);
 	}
 }

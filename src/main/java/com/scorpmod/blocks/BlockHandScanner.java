@@ -46,9 +46,6 @@ public class BlockHandScanner extends BlockContainerBaseScorpMod<HandScannerTile
 		par1World.notifyBlockChange(x, y, z, ScorpMod.blockhandScanner);
 		nbtname = tileEntity.oName;
 		name = player.getCommandSenderName();
-		System.out.println("Right Click");
-		System.out.println(name);
-		System.out.println(nbtname);
 		// This is never called when the world is restarted
 		if (!par1World.isRemote)
 		{
