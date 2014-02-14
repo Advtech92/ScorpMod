@@ -7,27 +7,21 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
-import net.minecraft.util.MathHelper;
-import net.minecraft.world.World;
 
-public class BlockElipsicalLamp extends Block{
-	
-	public BlockElipsicalLamp(){
-        super(Material.iron);
-        setBlockName("elipsicallampBlock");
-        setCreativeTab(CreativeTabs.tabBlock);
+public class BlockElipsicalLamp extends Block
+{
+	public BlockElipsicalLamp()
+	{
+		super(Material.iron);
+		setBlockName("elipsicallampBlock");
+		setCreativeTab(CreativeTabs.tabBlock);
 		setLightLevel(1);;
 	}
-	
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister reg){
+	public void registerBlockIcons(IIconRegister reg)
+	{
 		this.blockIcon = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + (this.getUnlocalizedName().substring(5)));
-    }
-    
-
+	}
 }

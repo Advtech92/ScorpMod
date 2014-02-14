@@ -2,21 +2,18 @@ package com.scorpmod.items;
 
 import java.util.List;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 import com.scorpmod.ScorpMod;
-import com.scorpmod.libs.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemDrink extends Item
+public class ItemDrink extends ItemBaseScorpMod
 {
 	public class potionType
 	{
@@ -29,10 +26,10 @@ public class ItemDrink extends Item
 			this.level = level;
 		}
 	}
-	
+
 	public ItemDrink()
 	{
-		super();
+		super("null");
 		pots = new potionType[1];
 	}
 
@@ -40,18 +37,8 @@ public class ItemDrink extends Item
 
 	public ItemDrink(String unlocName, potionType... pot)
 	{
-		super();
-		setUnlocalizedName(unlocName);
-		setCreativeTab(ScorpMod.tabscorpItems);
-		setMaxStackSize(1);
+		super(unlocName, 1);
 		pots = pot;
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IIconRegister reg)
-	{
-		this.itemIcon = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
 
 	@Override

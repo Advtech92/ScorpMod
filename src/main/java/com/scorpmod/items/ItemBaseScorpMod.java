@@ -5,17 +5,22 @@ import com.scorpmod.libs.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.ItemBucket;
+import net.minecraft.item.Item;
 
-public class ItemRedBucket extends ItemBucket
+public class ItemBaseScorpMod extends Item
 {
-	public ItemRedBucket(Block lid)
+	public ItemBaseScorpMod(String unlocName, int stackSize)
 	{
-		super(lid);
-		setUnlocalizedName("redbucket");
+		super();
+		setUnlocalizedName(unlocName);
 		setCreativeTab(ScorpMod.tabscorpItems);
+		maxStackSize = stackSize;
+	}
+
+	public ItemBaseScorpMod(String unlocName)
+	{
+		this(unlocName, 64);
 	}
 
 	@Override

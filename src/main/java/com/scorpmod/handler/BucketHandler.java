@@ -13,36 +13,32 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 
-public class BucketHandler {
+public class BucketHandler
+{
+	public static BucketHandler INSTANCE = new BucketHandler();
+	public Map<Block, Item> buckets = new HashMap<Block, Item>();
 
-    public static BucketHandler INSTANCE = new BucketHandler();
-    public Map<Block, Item> buckets = new HashMap<Block, Item>();
+	private BucketHandler()
+	{}
 
-    private BucketHandler() {
-    }
+	@SubscribeEvent
+	public void onBucketFill(FillBucketEvent event)
+	{
+		ItemStack result = fillCustomBucket(event.world, event.target);
+		if (result == null) return;
+		event.result = result;
+		event.setResult(Result.ALLOW);
+	}
 
-    @SubscribeEvent
-    public void onBucketFill(FillBucketEvent event) {
-
-            ItemStack result = fillCustomBucket(event.world, event.target);
-
-            if (result == null)
-                    return;
-
-            event.result = result;
-            event.setResult(Result.ALLOW);
-    }
-
-    private ItemStack fillCustomBucket(World world, MovingObjectPosition pos) {
-
-            Block block = world.getBlock(pos.blockX, pos.blockY, pos.blockZ);
-
-            Item bucket = buckets.get(block);
-            if (bucket != null && world.getBlockMetadata(pos.blockX, pos.blockY, pos.blockZ) == 0) {
-                    world.setBlock(pos.blockX, pos.blockY, pos.blockZ, Blocks.air);
-                    return new ItemStack(bucket);
-            } else
-                    return null;
-
-    }
+	private ItemStack fillCustomBucket(World world, MovingObjectPosition pos)
+	{
+		Block block = world.getBlock(pos.blockX, pos.blockY, pos.blockZ);
+		Item bucket = buckets.get(block);
+		if (bucket != null && world.getBlockMetadata(pos.blockX, pos.blockY, pos.blockZ) == 0)
+		{
+			world.setBlock(pos.blockX, pos.blockY, pos.blockZ, Blocks.air);
+			return new ItemStack(bucket);
+		}
+		else return null;
+	}
 }

@@ -1,5 +1,5 @@
 package com.scorpmod.blocks;
 
-public class BlockWhiteFluid {
-
+public class BlockWhiteFluid
+{
 }

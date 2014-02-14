@@ -6,21 +6,22 @@ import com.scorpmod.libs.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 
-public class ItemMonsterMeat extends ItemFood {
-    public ItemMonsterMeat(){
-        super(8, 0.8F, true);
-        setUnlocalizedName("monstermeat");
-        setCreativeTab(ScorpMod.tabscorpItems);
-    }
-    
-@Override
-@SideOnly(Side.CLIENT)
-public void registerIcons(IIconRegister reg){
-        this.itemIcon = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
-}
-// To test food  /effect player 17 5 100
+public class ItemMonsterMeat extends ItemFood
+{
+	public ItemMonsterMeat()
+	{
+		super(8, 0.8F, true);
+		setUnlocalizedName("monstermeat");
+		setCreativeTab(ScorpMod.tabscorpItems);
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister reg)
+	{
+		this.itemIcon = reg.registerIcon(Reference.MOD_TEXTUREPATH + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+	}
+	// To test food /effect player 17 5 100
 }
