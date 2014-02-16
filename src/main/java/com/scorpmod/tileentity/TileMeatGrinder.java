@@ -101,7 +101,7 @@ public class TileMeatGrinder extends TileBaseScorpMod implements ISidedInventory
 	@Override
 	public void readFromNBT(NBTTagCompound tagCompound)
 	{
-		super.writeToNBT(tagCompound);
+		super.readFromNBT(tagCompound);
 		NBTTagList tagList = tagCompound.getTagList("Inventory", 10);
 		for (int i = 0; i < tagList.tagCount(); i++)
 		{
