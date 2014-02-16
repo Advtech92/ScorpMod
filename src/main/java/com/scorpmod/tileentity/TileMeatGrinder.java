@@ -11,14 +11,14 @@ import net.minecraft.nbt.NBTTagList;
 
 import com.scorpmod.ScorpMod;
 import com.scorpmod.Recipes.BottlerRecipies;
-import com.scorpmod.Recipes.MeatPurifierRecipies;
+import com.scorpmod.Recipes.MeatGrinderRecipies;
 
-public class TileMeatPurifier extends TileBaseScorpMod implements ISidedInventory
+public class TileMeatGrinder extends TileBaseScorpMod implements ISidedInventory
 {
 	public int pressTime = 0;
 	public int abc = 1;
 
-	public TileMeatPurifier()
+	public TileMeatGrinder()
 	{
 		this.inventory = new ItemStack[3];
 	}
@@ -181,7 +181,7 @@ public class TileMeatPurifier extends TileBaseScorpMod implements ISidedInventor
 			abc = 0;
 			return false;
 		}
-		ItemStack itemstack = MeatPurifierRecipies.instance().getRecipeResult(inventory[0].getItem(), inventory[1].getItem());
+		ItemStack itemstack = MeatGrinderRecipies.instance().getRecipeResult(inventory[0].getItem(), inventory[1].getItem());
 		if (itemstack == null)
 		{
 			return false;

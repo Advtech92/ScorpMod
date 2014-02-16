@@ -1,7 +1,7 @@
 package com.scorpmod.handler;
 
 import com.scorpmod.container.ContainerBottler;
-import com.scorpmod.container.ContainerMeatPurifier;
+import com.scorpmod.container.ContainerMeatGrinder;
 import com.scorpmod.container.ContainerMixer;
 import com.scorpmod.container.ContainerWasher;
 import com.scorpmod.gui.*;
@@ -33,7 +33,7 @@ public class GuiHandler implements IGuiHandler
 			case 2:
 				return new ContainerWasher((TileWasher) tile_entity, player.inventory);
 			case 3:
-				return new ContainerMeatPurifier((TileMeatPurifier) tile_entity, player.inventory);
+				return new ContainerMeatGrinder((TileMeatGrinder) tile_entity, player.inventory);
 				// For more clear-cut usage, you can change these to constants
 				// such as:
 				// case OtherGuiID: return new
@@ -67,7 +67,7 @@ public class GuiHandler implements IGuiHandler
 			case 2:
 				return new GuiWasher(player.inventory, (TileWasher) tile_entity);
 			case 3:
-				return new GuiMeatPurifier(player.inventory, (TileMeatPurifier) tile_entity);
+				return new GuiMeatGrinder(player.inventory, (TileMeatGrinder) tile_entity);
 				// For more clear-cut usage, you can change these to constants
 				// such as:
 				// case OtherGuiID: return new

@@ -10,13 +10,13 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class MeatPurifierRecipies
+public class MeatGrinderRecipies
 {
 	private Map<ArrayList<Item>, ItemStack> mixerList = new HashMap<ArrayList<Item>, ItemStack>();
 	private Map<Item, Float> mixerExperience = new HashMap<Item, Float>();
-	private static final MeatPurifierRecipies mixerBase = new MeatPurifierRecipies();
+	private static final MeatGrinderRecipies mixerBase = new MeatGrinderRecipies();
 
-	public static final MeatPurifierRecipies instance()
+	public static final MeatGrinderRecipies instance()
 	{
 		return mixerBase;
 	}
@@ -45,7 +45,7 @@ public class MeatPurifierRecipies
 		return this.mixerExperience.containsKey(Integer.valueOf(par1)) ? this.mixerExperience.get(Integer.valueOf(par1)).floatValue() : 0.0F;
 	}
 
-	private MeatPurifierRecipies()
+	private MeatGrinderRecipies()
 	{
 		addMixerRecipe(Items.rotten_flesh, ScorpMod.itemGrinder, new ItemStack(ScorpMod.itemmonsterNugget, 1, 0), 0.7F);
 	}

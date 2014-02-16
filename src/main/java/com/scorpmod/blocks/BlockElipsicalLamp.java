@@ -1,6 +1,8 @@
 package com.scorpmod.blocks;
 
+import com.scorpmod.ScorpMod;
 import com.scorpmod.libs.Reference;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -14,7 +16,7 @@ public class BlockElipsicalLamp extends Block
 	{
 		super(Material.iron);
 		setBlockName("elipsicallampBlock");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(ScorpMod.tabscorpBlocks);
 		setLightLevel(1);;
 	}
 

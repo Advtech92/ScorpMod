@@ -7,9 +7,9 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-import com.scorpmod.tileentity.TileMeatPurifier;
+import com.scorpmod.tileentity.TileMeatGrinder;
 
-public class ContainerMeatPurifier extends Container
+public class ContainerMeatGrinder extends Container
 {
 	private class SlotMeatPurifier extends Slot
 	{
@@ -25,9 +25,9 @@ public class ContainerMeatPurifier extends Container
 		}
 	}
 
-	protected TileMeatPurifier tile_entity;
+	protected TileMeatGrinder tile_entity;
 
-	public ContainerMeatPurifier(TileMeatPurifier tile_entity, InventoryPlayer player_inventory)
+	public ContainerMeatGrinder(TileMeatGrinder tile_entity, InventoryPlayer player_inventory)
 	{
 		this.tile_entity = tile_entity;
 		addSlotToContainer(new Slot(tile_entity, 0, 44, 15));

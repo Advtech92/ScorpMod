@@ -1,5 +1,6 @@
 package com.scorpmod.blocks;
 
+import com.scorpmod.ScorpMod;
 import com.scorpmod.libs.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -20,7 +21,7 @@ public class BlockCommanderAdz extends Block
 	{
 		super(Material.iron);
 		setBlockName("commanderadzBlock");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(ScorpMod.tabscorpBlocks);
 	}
 
 	@SideOnly(Side.CLIENT)

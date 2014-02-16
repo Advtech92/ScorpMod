@@ -7,15 +7,15 @@ import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
-import com.scorpmod.container.ContainerMeatPurifier;
+import com.scorpmod.container.ContainerMeatGrinder;
 import com.scorpmod.libs.GuiReferences;
-import com.scorpmod.tileentity.TileMeatPurifier;
+import com.scorpmod.tileentity.TileMeatGrinder;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GuiMeatPurifier extends GuiContainer
+public class GuiMeatGrinder extends GuiContainer
 {
-	private TileMeatPurifier meatPurifierTile;
+	private TileMeatGrinder meatPurifierTile;
 	public int var9 = 0;
 	World world;
 	int xx;
@@ -27,9 +27,9 @@ public class GuiMeatPurifier extends GuiContainer
 	int zz;
 	int progress;
 
-	public GuiMeatPurifier(InventoryPlayer inventory, TileMeatPurifier tile)
+	public GuiMeatGrinder(InventoryPlayer inventory, TileMeatGrinder tile)
 	{
-		super(new ContainerMeatPurifier(tile, inventory));
+		super(new ContainerMeatGrinder(tile, inventory));
 		meatPurifierTile = tile;
 	}
 
@@ -37,7 +37,7 @@ public class GuiMeatPurifier extends GuiContainer
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
 	{
 		fontRendererObj.drawString(StatCollector.translateToLocal("container.inventory"), 8, (ySize - 96) + 2, 4210752);
-		fontRendererObj.drawString("Meat Purifier", 66, 6, 4210752);
+		fontRendererObj.drawString("Meat Grinder", 66, 6, 4210752);
 	}
 
 	/**

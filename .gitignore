@@ -23,7 +23,11 @@ CREDITS-fml.txt
 LICENSE-fml.txt
 MinecraftForge-Credits.txt
 MinecraftForge-License.txt
-
+config/
+logs/
+options.txt
+saves/
+*.gitignore
 # External tool builders
 .externalToolBuilders/
 

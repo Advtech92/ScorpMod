@@ -1,6 +1,8 @@
 package com.scorpmod.blocks;
 
+import com.scorpmod.ScorpMod;
 import com.scorpmod.libs.Reference;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -19,7 +21,7 @@ public class BlockScorp extends Block
 	{
 		super(Material.iron);
 		setBlockName("scorpBlock");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(ScorpMod.tabscorpBlocks);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -8,9 +8,9 @@ tile.handScanner.name=Hand Scanner
 tile.liquidmixer.name=Infuser
 tile.bottler.name=Decantery
 tile.washer.name=Distillery
-tile.meatpurifier.name=Meat Grinder
+tile.meatGrinder.name=Meat Grinder
 
-//itmes
+//items
 item.filter.name=Filter
 item.monsternugget.name=Monster Nugget
 item.monstermeat.name=Monster Meat

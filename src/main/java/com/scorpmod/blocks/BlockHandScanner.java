@@ -20,6 +20,7 @@ public class BlockHandScanner extends BlockContainerBaseScorpMod<HandScannerTile
 	public BlockHandScanner()
 	{
 		super("handScanner", Material.iron, HandScannerTile.class, 0);
+		setCreativeTab(ScorpMod.tabscorpBlocks);
 	}
 
 	@Override

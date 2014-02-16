@@ -36,7 +36,7 @@ public class BlockContainerBaseScorpMod<T extends TileBaseScorpMod> extends Bloc
 		this.clazz = clazz;
 		this.guiID = guiID;
 		setBlockName(unlocName);
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(ScorpMod.tabscorpBlocks);
 		setHardness(3);
 	}
 	

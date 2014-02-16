@@ -32,7 +32,7 @@ import com.scorpmod.items.ItemMonsterMeat;
 import com.scorpmod.libs.Reference;
 import com.scorpmod.tileentity.HandScannerTile;
 import com.scorpmod.tileentity.TileBottler;
-import com.scorpmod.tileentity.TileMeatPurifier;
+import com.scorpmod.tileentity.TileMeatGrinder;
 import com.scorpmod.tileentity.TileMixer;
 import com.scorpmod.tileentity.TileWasher;
 
@@ -59,7 +59,7 @@ public class ScorpMod
 	public static Block blockliquidMixer;
 	public static Block blockliquidWasher;
 	public static Block blockliquidBottler;
-	public static Block blockmeatPurifier;
+	public static Block blockmeatGrinder;
 	public static Block blockwhiteFluid;
 	public static Block blockgreenFluid;
 	public static Block blockpurpleFluid;
@@ -105,6 +105,14 @@ public class ScorpMod
 			return ScorpMod.itemyellowBottle;
 		}
 	};
+	public static CreativeTabs tabscorpBlocks = new CreativeTabs("tabscorpBlocks")
+	{
+		@Override
+		public Item getTabIconItem()
+		{
+			return new ItemStack(ScorpMod.blockmeatGrinder).getItem();
+		}
+	};
 
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent event)
@@ -125,7 +133,7 @@ public class ScorpMod
 		blockliquidMixer = new BlockContainerBaseScorpMod<TileMixer>("liquidmixer", Material.iron, TileMixer.class, 0);
 		blockliquidBottler = new BlockContainerBaseScorpMod<TileBottler>("bottler", Material.iron, TileBottler.class, 1);
 		blockliquidWasher = new BlockContainerBaseScorpMod<TileWasher>("washer", Material.iron, TileWasher.class, 2);
-		blockmeatPurifier = new BlockContainerBaseScorpMod<TileMeatPurifier>("meatpurifier", Material.iron, TileMeatPurifier.class, 3);
+		blockmeatGrinder = new BlockContainerBaseScorpMod<TileMeatGrinder>("meatGrinder", Material.iron, TileMeatGrinder.class, 3);
 		
 		itemfluidFilter = new ItemBaseScorpMod("filter", 1, true, 10);
 		itempurpleDust = new ItemBaseScorpMod("purpledust");
@@ -156,7 +164,7 @@ public class ScorpMod
 		registerBlock(blockliquidMixer, "Mixer");
 		registerBlock(blockliquidBottler, "Bottler");
 		registerBlock(blockliquidWasher, "Washer");
-		registerBlock(blockmeatPurifier, "MeatPurifier");
+		registerBlock(blockmeatGrinder, "MeatGrinder");
 		
 		registerItem(itemfluidFilter, "Filter");
 		registerItem(itempurpleDust, "Purple Dust");
@@ -237,7 +245,7 @@ public class ScorpMod
 		GameRegistry.registerTileEntity(TileMixer.class, "MixerTile");
 		GameRegistry.registerTileEntity(TileMixer.class, "BottlerTile");
 		GameRegistry.registerTileEntity(TileWasher.class, "WasherTile");
-		GameRegistry.registerTileEntity(TileMeatPurifier.class, "MeatPurifierTile");
+		GameRegistry.registerTileEntity(TileMeatGrinder.class, "MeatGrinderTile");
 		
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("white", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemwhiteBucket), new ItemStack(Items.bucket));
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("green", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(ScorpMod.itemgreenBucket), new ItemStack(Items.bucket));
