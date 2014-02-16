@@ -151,7 +151,7 @@ public class TileWasher extends TileBaseScorpMod implements ISidedInventory
 			this.inventory[1].getItem().setContainerItem(null);
 			this.inventory[getFilterSlot()].setItemDamage(inventory[getFilterSlot()].getItemDamage() + 1);
 			this.inventory[getNotFilterSlot()].stackSize--;
-			if (inventory[getFilterSlot()].getItemDamage() >= 10) inventory[getFilterSlot()].stackSize--;
+			if (inventory[getFilterSlot()].getItemDamage() >= inventory[getFilterSlot()].getMaxDamage()) inventory[getFilterSlot()].stackSize--;
 			if (this.inventory[0].stackSize == 0)
 			{
 				Item var2 = this.inventory[0].getItem().getContainerItem();
