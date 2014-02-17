@@ -133,10 +133,10 @@ public class ScorpMod
 		blockmeatGrinder = new BlockContainerBaseScorpMod<TileMeatGrinder>("meatGrinder", Material.iron, TileMeatGrinder.class, 3);
 		
 		itemfluidFilter = new ItemBaseScorpMod("filter", 1, true, 10);
-		itempurpleDust = new ItemBaseScorpMod("purpledust");
+		itemGrinder = new ItemBaseScorpMod("grinder", 1, true, 32);
 		itemmonsterNugget = new ItemFoodScorpMod(4, 0.4F, true, "monsternugget");
 		itemmonsterMeat = new ItemFoodScorpMod(16, 1.6F, true, "monstermeat");
-		itemGrinder = new ItemBaseScorpMod("grinder", 1, true, 32);
+		itempurpleDust = new ItemBaseScorpMod("purpledust");
 		
 		ItemDrink drink = new ItemDrink();
 		itemgreenBottle = new ItemDrink("greenbottle", drink.new potionType(Potion.heal.id, 1, 2), drink.new potionType(Potion.resistance.id, 3600, 2), drink.new potionType(Potion.regeneration.id, 3600, 2), drink.new potionType(Potion.field_76443_y.id, 200, 2));
