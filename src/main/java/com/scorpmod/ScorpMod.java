@@ -14,10 +14,9 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import com.scorpmod.blocks.BlockCommanderAdz;
-import com.scorpmod.blocks.BlockContainedSunspot;
 import com.scorpmod.blocks.BlockContainerBaseScorpMod;
-import com.scorpmod.blocks.BlockElipsicalLamp;
 import com.scorpmod.blocks.BlockHandScanner;
+import com.scorpmod.blocks.BlockLightScorpMod;
 import com.scorpmod.blocks.BlockScorp;
 import com.scorpmod.fluid.BlockFluid;
 import com.scorpmod.handler.BucketHandler;
@@ -124,8 +123,10 @@ public class ScorpMod
 		
 		scorpBlock = new BlockScorp();
 		blockcommanderAdz = new BlockCommanderAdz();
-		blockelipsicalLamp = new BlockElipsicalLamp();
-		blockcontainedSunspot = new BlockContainedSunspot();
+		
+		blockelipsicalLamp = new BlockLightScorpMod("elipsicallampBlock");
+		blockcontainedSunspot = new BlockLightScorpMod("containedsunspotBlock");
+		
 		blockhandScanner = new BlockHandScanner();
 		blockliquidMixer = new BlockContainerBaseScorpMod<TileMixer>("liquidmixer", Material.iron, TileMixer.class, 0);
 		blockliquidBottler = new BlockContainerBaseScorpMod<TileBottler>("bottler", Material.iron, TileBottler.class, 1);
