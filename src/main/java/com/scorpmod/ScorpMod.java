@@ -260,10 +260,11 @@ public class ScorpMod
 		GameRegistry.addRecipe(new ItemStack(ScorpMod.blockliquidBottler), new Object[] { "ibi", "iBi", "ici", 'i', Items.iron_ingot, 'b', ScorpMod.itememptyBottle, 'B', Items.bucket, 'c', Items.clay_ball, });
 		GameRegistry.addRecipe(new ItemStack(ScorpMod.blockliquidMixer), new Object[] { "iBi", "iri", "ici", 'i', Items.iron_ingot, 'B', Items.bucket, 'r', Items.redstone, 'c', Items.clay_ball, });
 		GameRegistry.addRecipe(new ItemStack(ScorpMod.blockliquidWasher), new Object[] { "ifi", "iri", "ici", 'i', Items.iron_ingot, 'r', Items.redstone, 'f', ScorpMod.itemfluidFilter, 'c', Items.clay_ball, });
-		GameRegistry.addRecipe(new ItemStack(ScorpMod.itemmonsterMeat), new Object[] { "nnn", "nnn", "nnn", 'n', ScorpMod.itemmonsterNugget, });
 		
 		ItemStack dyeStack = new ItemStack(Items.dye, 1, 5);
+		ItemStack nuggetStack = new ItemStack(ScorpMod.itemmonsterNugget, 1);
 		
+		GameRegistry.addShapelessRecipe(new ItemStack(ScorpMod.itemmonsterMeat, 1), nuggetStack, nuggetStack, nuggetStack, nuggetStack);
 		GameRegistry.addShapelessRecipe(new ItemStack(ScorpMod.itempurpleDust, 1), dyeStack, Items.sugar);
 	}
 
