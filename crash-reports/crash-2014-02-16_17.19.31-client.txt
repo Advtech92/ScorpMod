@@ -1,0 +1,137 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 16/02/14 17:19
+Description: Initializing game
+
+java.lang.Error: Unresolved compilation problems: 
+	String cannot be resolved to a type
+	String cannot be resolved to a type
+	String cannot be resolved to a type
+	Implicit super constructor Object() is undefined for default constructor. Must define an explicit constructor
+	String cannot be resolved to a type
+	String cannot be resolved to a type
+	String cannot be resolved to a type
+	The method registerGuiHandler(Object, IGuiHandler) from the type NetworkRegistry refers to the missing type Object
+	The method getModConfigurationDirectory() from the type FMLPreInitializationEvent refers to the missing type File
+	The method register(Object) from the type EventBus refers to the missing type Object
+
+	at com.madpcgaming.citytech.CityTech.<init>(CityTech.java:24)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at cpw.mods.fml.common.ILanguageAdapter$JavaAdapter.getNewInstance(ILanguageAdapter.java:173)
+	at cpw.mods.fml.common.FMLModContainer.constructMod(FMLModContainer.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.EventHandler.handleEvent(EventHandler.java:74)
+	at com.google.common.eventbus.SynchronizedEventHandler.handleEvent(SynchronizedEventHandler.java:47)
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:314)
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:296)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:267)
+	at cpw.mods.fml.common.LoadController.sendEventToModContainer(LoadController.java:209)
+	at cpw.mods.fml.common.LoadController.propogateStateMessage(LoadController.java:188)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.EventHandler.handleEvent(EventHandler.java:74)
+	at com.google.common.eventbus.SynchronizedEventHandler.handleEvent(SynchronizedEventHandler.java:47)
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:314)
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:296)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:267)
+	at cpw.mods.fml.common.LoadController.distributeStateMessage(LoadController.java:119)
+	at cpw.mods.fml.common.Loader.loadMods(Loader.java:487)
+	at cpw.mods.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:194)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:561)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:931)
+	at net.minecraft.client.main.Main.main(Main.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:134)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at com.madpcgaming.citytech.CityTech.<init>(CityTech.java:24)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at cpw.mods.fml.common.ILanguageAdapter$JavaAdapter.getNewInstance(ILanguageAdapter.java:173)
+	at cpw.mods.fml.common.FMLModContainer.constructMod(FMLModContainer.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.EventHandler.handleEvent(EventHandler.java:74)
+	at com.google.common.eventbus.SynchronizedEventHandler.handleEvent(SynchronizedEventHandler.java:47)
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:314)
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:296)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:267)
+	at cpw.mods.fml.common.LoadController.sendEventToModContainer(LoadController.java:209)
+	at cpw.mods.fml.common.LoadController.propogateStateMessage(LoadController.java:188)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.EventHandler.handleEvent(EventHandler.java:74)
+	at com.google.common.eventbus.SynchronizedEventHandler.handleEvent(SynchronizedEventHandler.java:47)
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:314)
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:296)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:267)
+	at cpw.mods.fml.common.LoadController.distributeStateMessage(LoadController.java:119)
+	at cpw.mods.fml.common.Loader.loadMods(Loader.java:487)
+	at cpw.mods.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:194)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:561)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.run(Minecraft.java:931)
+	at net.minecraft.client.main.Main.main(Main.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:134)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.2
+	Operating System: Windows 8 (amd64) version 6.2
+	Java Version: 1.7.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 295072776 bytes (281 MB) / 460849152 bytes (439 MB) up to 1886388224 bytes (1799 MB)
+	JVM Flags: 0 total; 
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.01-pre FML v7.2.116.1029 Minecraft Forge 10.12.0.1029 6 mods loaded, 6 mods active
+	mcp{8.09} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed
+	FML{7.2.116.1029} [Forge Mod Loader] (forgeSrc-1.7.2-10.12.0.1029.jar) Unloaded->Constructed
+	Forge{10.12.0.1029} [Minecraft Forge] (forgeSrc-1.7.2-10.12.0.1029.jar) Unloaded->Constructed
+	citytech{pre-release-0.0.1} [CityTech] (bin) Unloaded
+	scorpmod{1} [ScorpMod] (bin) Unloaded
+	craftingChisel{0.0.1} [Crafting Chisel] (bin) Unloaded
+	Launched Version: 1.7
+	LWJGL: 2.9.0
+	OpenGL: AMD Radeon HD 7800 Series GL version 4.2.12422 Compatibility Profile Context 13.152.1.1000, ATI Technologies Inc.
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: ~~ERROR~~ NullPointerException: null
+	Anisotropic Filtering: Off (1)

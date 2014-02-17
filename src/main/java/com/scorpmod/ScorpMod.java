@@ -1,7 +1,6 @@
 package com.scorpmod;
 
 import java.util.Arrays;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -14,7 +13,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
-
 import com.scorpmod.blocks.BlockCommanderAdz;
 import com.scorpmod.blocks.BlockContainedSunspot;
 import com.scorpmod.blocks.BlockContainerBaseScorpMod;
@@ -28,14 +26,13 @@ import com.scorpmod.items.ItemBaseScorpMod;
 import com.scorpmod.items.ItemBucketScorpMod;
 import com.scorpmod.items.ItemDrink;
 import com.scorpmod.items.ItemDrinkDirty;
-import com.scorpmod.items.ItemMonsterMeat;
+import com.scorpmod.items.ItemFoodScorpMod;
 import com.scorpmod.libs.Reference;
 import com.scorpmod.tileentity.HandScannerTile;
 import com.scorpmod.tileentity.TileBottler;
 import com.scorpmod.tileentity.TileMeatGrinder;
 import com.scorpmod.tileentity.TileMixer;
 import com.scorpmod.tileentity.TileWasher;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -137,8 +134,8 @@ public class ScorpMod
 		
 		itemfluidFilter = new ItemBaseScorpMod("filter", 1, true, 10);
 		itempurpleDust = new ItemBaseScorpMod("purpledust");
-		itemmonsterNugget = new ItemBaseScorpMod("monsternugget");
-		itemmonsterMeat = new ItemMonsterMeat();
+		itemmonsterNugget = new ItemFoodScorpMod(4, 0.4F, true, "monsternugget");
+		itemmonsterMeat = new ItemFoodScorpMod(16, 1.6F, true, "monstermeat");
 		itemGrinder = new ItemBaseScorpMod("grinder", 1, true, 32);
 		
 		ItemDrink drink = new ItemDrink();
