@@ -106,7 +106,7 @@ public class ScorpMod
 		@Override
 		public Item getTabIconItem()
 		{
-			return new ItemStack(ScorpMod.blockmeatGrinder).getItem();
+			return new ItemStack(ScorpMod.scorpBlock).getItem();
 		}
 	};
 
