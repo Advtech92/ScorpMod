@@ -14,7 +14,7 @@ tile.meatGrinder.name=Meat Grinder
 item.filter.name=Filter
 item.monsternugget.name=Monster Nugget
 item.monstermeat.name=Monster Meat
-item.grinder.name=Grinder Head
+item.grinderhead.name=Grinder Head
 
 //Buckets
 

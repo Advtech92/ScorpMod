@@ -134,7 +134,7 @@ public class ScorpMod
 		blockmeatGrinder = new BlockContainerBaseScorpMod<TileMeatGrinder>("meatGrinder", Material.iron, TileMeatGrinder.class, 3);
 		
 		itemfluidFilter = new ItemBaseScorpMod("filter", 1, true, 10);
-		itemGrinder = new ItemBaseScorpMod("grinder", 1, true, 32);
+		itemGrinder = new ItemBaseScorpMod("grinderhead", 1, true, 32);
 		itemmonsterNugget = new ItemFoodScorpMod(4, 0.4F, true, "monsternugget");
 		itemmonsterMeat = new ItemFoodScorpMod(16, 1.6F, true, "monstermeat");
 		itempurpleDust = new ItemBaseScorpMod("purpledust");
