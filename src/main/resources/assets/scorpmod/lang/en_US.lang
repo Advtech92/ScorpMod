@@ -1,0 +1,56 @@
+//Blocks
+tile.scorpBlock.name=Scorp Block
+tile.commanderadzBlock.name=CommanderAdz Block
+tile.containedsunspotBlock.name=Contained Sunspot
+tile.elipsicallampBlock.name=Elipsical Lamp
+
+tile.handScanner.name=Hand Scanner
+tile.liquidmixer.name=Infuser
+tile.bottler.name=Decantery
+tile.washer.name=Distillery
+tile.meatGrinder.name=Meat Grinder
+
+//items
+item.filter.name=Filter
+item.monsternugget.name=Monster Nugget
+item.monstermeat.name=Monster Meat
+item.grinderhead.name=Grinder Head
+
+//Buckets
+
+item.greenbucket.name=Green Bucket
+item.purplebucket.name=Purple Bucket
+item.redbucket.name=Red Bucket
+item.turquoisebucket.name=Turquoise Bucket
+item.whitebucket.name=White Bucket
+item.yellowbucket.name=Yellow Bucket
+
+//Bottles
+item.emptybottle.name=Empty Bottle
+item.greenbottle.name=Green Bottle
+item.purplebottle.name=Purple Bottle
+item.redbottle.name=Red Bottle
+item.turquoisebottle.name=Turquoise Bottle
+item.whitebottle.name=White Bottle
+item.yellowbottle.name=Yellow Bottle
+
+//Dirty Bottles
+item.greendirtybottle.name=Dirty Green Bottle
+item.purpledirtybottle.name=Dirty Purple Bottle
+item.reddirtybottle.name=Dirty Red Bottle
+item.turquoisedirtybottle.name=Dirty Turquoise Bottle
+item.whitedirtybottle.name=Dirty White Bottle
+item.yellowdirtybottle.name=Dirty Yellow Bottle
+
+//Fluids
+tile.fluidwhite.name=White Liquid
+tile.fluidgreen.name=Green Liquid
+tile.fluidpurple.name=Purple Liquid
+tile.fluidred.name=Red Liquid
+tile.fluidturquoise.name=Turquoise Liquid
+tile.fluidyellow.name=Yellow Liquid
+
+item.purpledust.name=Purple Dust
+
+itemGroup.tabscorpItems=ScorpMod Items
+itemGroup.tabscorpBlocks=ScorpMod Blocks

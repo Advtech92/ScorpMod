@@ -1,29 +1,33 @@
 package com.scorpmod.tileentity;
 
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
 
-public class HandScannerTile extends TileEntity {
-        
-        public String oName;
+public class HandScannerTile extends TileBaseScorpMod
+{
+	public String oName;
+	public int power;
+	public int status;
+	
+	public HandScannerTile()
+	{
+		oName = "null";
+	}
 
-        @Override
-        public void func_145841_b(NBTTagCompound nbt){
-        		System.out.println("Written NBT");
-        		super.func_145841_b(nbt);
-        		System.out.println(oName);
-                nbt.setString("oName", oName);
-                
-        }
-        
-        @Override
-        public void func_145839_a(NBTTagCompound nbt){
-        		System.out.println("Read NBT");
-        		super.func_145839_a(nbt);
-                oName = nbt.getString("oName");
-                System.out.println(oName);
-                
+	@Override
+	public void writeToNBT(NBTTagCompound nbt)
+	{
+		nbt.setString("oName", oName);
+		nbt.setInteger("power", power);
+		nbt.setInteger("status", status);
+		super.writeToNBT(nbt);
+	}
 
-        }
-
+	@Override
+	public void readFromNBT(NBTTagCompound nbt)
+	{
+		super.readFromNBT(nbt);
+		oName = nbt.getString("oName");
+		power = nbt.getInteger("power");
+		status = nbt.getInteger("status");
+	}
 }

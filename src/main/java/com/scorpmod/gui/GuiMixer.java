@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 
 import com.scorpmod.container.ContainerMixer;
-import com.scorpmod.libs.DefaultProps;
+import com.scorpmod.libs.GuiReferences;
 import com.scorpmod.tileentity.TileMixer;
 
 import cpw.mods.fml.relauncher.Side;
@@ -16,57 +16,54 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class GuiMixer extends GuiContainer
 {
-        private TileMixer mixerTile;
-        public int var9 = 0;
-        World world;
-        int xx;
-        int yy;
-        int var5;
-        int var6;
-        int x;
-        int y;
-        int zz;
-        int progress;
+	private TileMixer mixerTile;
+	public int var9 = 0;
+	World world;
+	int xx;
+	int yy;
+	int var5;
+	int var6;
+	int x;
+	int y;
+	int zz;
+	int progress;
 
-        public GuiMixer(InventoryPlayer inventory, TileMixer tile)
-        {
-                super(new ContainerMixer(tile, inventory));
-                mixerTile = tile;
-        }
+	public GuiMixer(InventoryPlayer inventory, TileMixer tile)
+	{
+		super(new ContainerMixer(tile, inventory));
+		mixerTile = tile;
+	}
 
-        @Override
-        protected void func_146979_b(int par1, int par2)
-        {
-        	field_71466_p.drawString(StatCollector.translateToLocal("container.inventory"), 8, (field_147000_g - 96) + 2, 4210752);
-                this.fontRenderer.drawString("Liquid Mixer", 66, 6, 4210752);
-        }
+	@Override
+	protected void drawGuiContainerForegroundLayer(int par1, int par2)
+	{
+		fontRendererObj.drawString(StatCollector.translateToLocal("container.inventory"), 8, (ySize - 96) + 2, 4210752);
+		fontRendererObj.drawString("Infused", 66, 6, 4210752);
+	}
 
-        /**
-         * Draw the background layer for the GuiContainer (everything behind the
-         * items)
-         */
-        @Override
-        @SideOnly(Side.CLIENT)
-        @SuppressWarnings("unused")
-        protected void func_146976_a(float par1, int par2, int par3)
-        {
-                int k = (this.field_146294_l - this.field_146999_f) / 2;
-                int l = (this.field_146295_m - this.field_147000_g) / 2;
-                GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-                this.mc.renderEngine.bindTexture(DefaultProps.MIXER_GUI);
-                var5 = (this.field_146294_l - this.field_146999_f) / 2;
-                var6 = (this.field_146295_m - this.field_147000_g) / 2;
-
-                this.drawTexturedModalRect(var5, var6, 0, 0, this.field_146999_f, this.field_147000_g);
-                int var7 = 0;
-                if (this.mixerTile.canPress())
-                {
-                        System.out.println(this.mixerTile.abc);
-                        x = (this.field_146294_l - this.field_146999_f) / 2 + 61;
-                        y = (this.field_146295_m - this.field_147000_g) / 2 + 19;
-                        progress = (int) (0.59 * this.mixerTile.abc);
-                        this.drawTexturedModalRect(this.x, this.y, 177, 2, this.progress, 46);
-                }
-        }
-
+	/**
+	 * Draw the background layer for the GuiContainer (everything behind the
+	 * items)
+	 */
+	@Override
+	@SideOnly(Side.CLIENT)
+	@SuppressWarnings("unused")
+	protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
+	{
+		int k = (this.width - this.xSize) / 2;
+		int l = (this.height - this.ySize) / 2;
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		this.mc.renderEngine.bindTexture(GuiReferences.MIXER_GUI);
+		var5 = (this.width - this.xSize) / 2;
+		var6 = (this.height - this.ySize) / 2;
+		this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);
+		int var7 = 0;
+		if (this.mixerTile.canPress())
+		{
+			x = (this.width - this.xSize) / 2 + 61;
+			y = (this.height - this.ySize) / 2 + 19;
+			progress = (int) (0.59 * this.mixerTile.abc);
+			this.drawTexturedModalRect(this.x, this.y, 177, 2, this.progress, 46);
+		}
+	}
 }
